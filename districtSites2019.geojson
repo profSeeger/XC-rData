@@ -1,0 +1,75 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "location": "Cedar Falls",
+        "class": "4A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.487,
+          42.53
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": "Marshalltown",
+        "class": "4A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.905,
+          42.001
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": "Mount Ayr",
+        "class": "4A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.226,
+          40.705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": "Iowa City (Regina)",
+        "class": "4A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.504,
+          41.668
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "location": "Ridge View",
+        "class": "4A"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.537,
+          42.48
+        ]
+      }
+    }
+  ]
+}
