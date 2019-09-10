@@ -48,21 +48,6 @@
 
 
 
-
-        //Alerts
-        var alert1 = L.polygon([
-            [45.825833, -91.891111],
-            [45.535833, -92.023333],
-            [45.498333, -92.638889],
-            [46.498333, -92.638889]
-        ], {
-            color: 'yellow',
-            fillColor: 'yellow',
-            fillOpacity: 0.6
-        });
-
-
-
         //create the map
         var map = L.map('map', {
             center: new L.LatLng(44, -91),
@@ -76,7 +61,7 @@
 
 
 
-	/*
+
 function popUp(f,l){
 
     var out = [];
@@ -88,11 +73,26 @@ function popUp(f,l){
     }
 
 }
- */
+
+
+
+
+
+
+function forEachFeature(feature, layer) {
+        var popupContent = "<p> <b>" + feature.properties.location +
+            "</b></br>Class: "+ feature.properties.class +"</p>";
+
+        layer.bindPopup(popupContent);
+    }
+
+
+
 
 var geojsonLayer = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
+	onEachFeature: forEachFeature,
     pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, geojsonMarkerOptions);
+        return L.circleMarker(latlng, districtMarkerOptions);
     }
 }).addTo(map);
 
@@ -105,20 +105,16 @@ var geojsonLayer = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/dis
 
 
 
-var geojsonMarkerOptions = {
-    radius: 8,
-    fillColor: "#ff7800",
+var districtMarkerOptions = {
+    radius: 6,
+    fillColor: "blue",
     color: "#000",
     weight: 1,
     opacity: 1,
     fillOpacity: 0.8
 };
 
-L.geoJson(someGeojsonFeature, {
-    pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, geojsonMarkerOptions);
-    }
-}).addTo(map);
+
 
 
 
