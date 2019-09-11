@@ -168,9 +168,9 @@ var rankingMarkerOptions = {
 
 var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
 	onEachFeature: forEachFeature_district,
-    pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, districtMarkerOptions);
-    }
+   // pointToLayer: function (feature, latlng) {
+   //     return L.circleMarker(latlng, districtMarkerOptions);
+   // }
 }).addTo(map);
 
 
