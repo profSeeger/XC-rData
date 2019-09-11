@@ -4,332 +4,31 @@
     {
       "type": "Feature",
       "properties": {
-        "teamName": "Trinity Christian High School",
-        "enrollment": 57,
-        "class": "1A",
-        "headSchool": "Trinity Christian High School",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 16,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -96.148165,
-          43.195
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "St. Albert, Council Bluffs",
-        "enrollment": 125,
-        "class": "1A",
-        "headSchool": "St. Albert, Council Bluffs",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 8,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -95.822955,
-          42.262118
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "Sioux Central, Sioux Rapids",
-        "enrollment": 174,
-        "class": "1A",
-        "headSchool": "Sioux Central, Sioux Rapids",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 16,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -95.1511051,
-          42.8933093
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "Nodaway Valley",
-        "enrollment": 155,
-        "class": "1A",
-        "headSchool": "Nodaway Valley",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 4,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -94.4613543,
-          41.3052657
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "St. Edmond, Fort Dodge",
-        "enrollment": 141,
-        "class": "1A",
-        "headSchool": "St. Edmond, Fort Dodge",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 13,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -94.167149,
-          42.511044
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "Earlham",
-        "enrollment": 153,
-        "class": "1A",
-        "headSchool": "Earlham",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 1,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -94.1229834,
-          41.4915674
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "Ogden",
-        "enrollment": 157,
-        "class": "1A",
-        "headSchool": "Ogden",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 11,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -94.0320167,
-          42.0395595
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "Madrid",
-        "enrollment": 148,
-        "class": "1A",
-        "headSchool": "Madrid",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 2,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -93.8156689,
-          41.8779511
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "Collins-Maxwell",
-        "enrollment": 88,
-        "class": "1A",
-        "headSchool": "Collins-Maxwell",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 14,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -93.3996546,
-          41.8919322
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "Newman Catholic, Mason City",
-        "enrollment": 106,
-        "class": "1A",
-        "headSchool": "Newman Catholic, Mason City",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 10,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -93.2393,
-          43.1328
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "BCLUW, Conrad",
-        "enrollment": 132,
-        "class": "1A",
-        "headSchool": "BCLUW, Conrad",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 9,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -92.8746455,
-          42.2247077
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
-        "teamName": "Denver",
-        "enrollment": 179,
-        "class": "1A",
-        "headSchool": "Denver",
-        "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 7,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
-      },
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          -92.3374045,
-          42.6713718
-        ]
-      }
-    },
-    {
-      "type": "Feature",
-      "properties": {
         "teamName": "Pekin",
         "enrollment": 160,
         "class": "1A",
         "headSchool": "Pekin",
         "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 6,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
+        "rank0g": 8,
+        "rank1g": 7,
+        "rank2g": 7,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 8,
+        "rank1b": 6,
+        "rank2b": 7,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
       },
       "geometry": {
         "type": "Point",
@@ -342,104 +41,148 @@
     {
       "type": "Feature",
       "properties": {
-        "teamName": "South Winneshiek",
-        "enrollment": 141,
+        "teamName": "Nodaway Valley",
+        "enrollment": 155,
         "class": "1A",
-        "headSchool": "South Winneshiek, Calmar",
+        "headSchool": "Nodaway Valley",
         "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 5,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 5,
+        "rank1b": 4,
+        "rank2b": 4,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -91.8640482,
-          43.1835847
+          -94.4613543,
+          41.3052657
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "teamName": "North Linn, Troy Mills",
+        "teamName": "Tri-Center, Neola",
         "enrollment": 163,
         "class": "1A",
-        "headSchool": "North Linn, Troy Mills",
+        "headSchool": "Tri-Center, Neola",
         "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 16,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
+        "rank0g": 14,
+        "rank1g": 16,
+        "rank2g": 12,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": 8,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -91.6615,
-          42.291
+          -95.6155615,
+          41.4488816
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "teamName": "Maquoketa Valley, Delhi",
-        "enrollment": 151,
+        "teamName": "AHSTW, Avoca",
+        "enrollment": 166,
         "class": "1A",
-        "headSchool": "Maquoketa Valley, Delhi",
+        "headSchool": "AHSTW, Avoca",
         "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 3,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
+        "rank0g": 16,
+        "rank1g": 14,
+        "rank2g": 16,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -91.3309789,
-          42.4297143
+          -95.3380549,
+          41.4766571
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "teamName": "Cascade, Western Dubuque",
-        "enrollment": 174,
+        "teamName": "Earlham",
+        "enrollment": 153,
         "class": "1A",
-        "headSchool": "Cascade, Western Dubuque",
+        "headSchool": "Earlham",
         "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 15,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
+        "rank0g": 9,
+        "rank1g": 9,
+        "rank2g": 9,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 4,
+        "rank1b": 1,
+        "rank2b": 1,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -91.018142,
-          42.3008
+          -94.1229834,
+          41.4915674
         ]
       }
     },
@@ -451,15 +194,26 @@
         "class": "1A",
         "headSchool": "Wilton",
         "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 16,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 16,
+        "rank1b": 16,
+        "rank2b": 16,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
       },
       "geometry": {
         "type": "Point",
@@ -477,15 +231,26 @@
         "class": "1A",
         "headSchool": "Durant",
         "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 16,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": "",
-        "ranking8": ""
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 16,
+        "rank1b": 16,
+        "rank2b": 16,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
       },
       "geometry": {
         "type": "Point",
@@ -498,25 +263,1220 @@
     {
       "type": "Feature",
       "properties": {
+        "teamName": "Logan-Magnolia",
+        "enrollment": 148,
+        "class": "1A",
+        "headSchool": "Logan-Magnolia",
+        "co-opingSchools": "",
+        "rank0g": 1,
+        "rank1g": 1,
+        "rank2g": 1,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.7891614,
+          41.6430472
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Regina, Iowa City",
+        "enrollment": 163,
+        "class": "1A",
+        "headSchool": "Regina, Iowa City",
+        "co-opingSchools": "",
+        "rank0g": 2,
+        "rank1g": 2,
+        "rank2g": 11,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.504,
+          41.6678
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "teamName": "Calamus-Wheatland",
         "enrollment": 99,
         "class": "1A",
         "headSchool": "Calamus-Wheatland",
         "co-opingSchools": "",
-        "ranking0": "",
-        "ranking1": 12,
-        "ranking2": "",
-        "ranking3": "",
-        "ranking4": "",
-        "ranking5": "",
-        "ranking6": "",
-        "ranking7": ""
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 2,
+        "rank1b": 12,
+        "rank2b": 13,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
           -90.8382014,
           41.8316906
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Prince of Peace Catholic, Clinton",
+        "enrollment": 46,
+        "class": "1A",
+        "headSchool": "Prince of Peace Catholic, Clinton",
+        "co-opingSchools": "",
+        "rank0g": 16,
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.193655,
+          41.842821
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Woodward Academy",
+        "enrollment": 171,
+        "class": "1A",
+        "headSchool": "Woodward Academy",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 10,
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.9159,
+          41.872145
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Madrid",
+        "enrollment": 148,
+        "class": "1A",
+        "headSchool": "Madrid",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 1,
+        "rank1b": 2,
+        "rank2b": 2,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.8156689,
+          41.8779511
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Collins-Maxwell",
+        "enrollment": 88,
+        "class": "1A",
+        "headSchool": "Collins-Maxwell",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": 16,
+        "rank2g": 16,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": 14,
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.3996546,
+          41.8919322
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "IKM-Manning",
+        "enrollment": 150,
+        "class": "1A",
+        "headSchool": "IKM-Manning",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": 11,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.0651328,
+          41.9091382
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "East Marshall, LeGrand",
+        "enrollment": 173,
+        "class": "1A",
+        "headSchool": "East Marshall, LeGrand",
+        "co-opingSchools": "",
+        "rank0g": 12,
+        "rank1g": 16,
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.77862,
+          42.0076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Ogden",
+        "enrollment": 157,
+        "class": "1A",
+        "headSchool": "Ogden",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 14,
+        "rank1b": 11,
+        "rank2b": 9,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.0320167,
+          42.0395595
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "BCLUW, Conrad",
+        "enrollment": 132,
+        "class": "1A",
+        "headSchool": "BCLUW, Conrad",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 9,
+        "rank1b": 9,
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.8746455,
+          42.2247077
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Marquette Catholic, Bellevue",
+        "enrollment": 52,
+        "class": "1A",
+        "headSchool": "Marquette Catholic, Bellevue",
+        "co-opingSchools": "",
+        "rank0g": 10,
+        "rank1g": 11,
+        "rank2g": 10,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.429,
+          42.2599
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "St. Albert, Council Bluffs",
+        "enrollment": 125,
+        "class": "1A",
+        "headSchool": "St. Albert, Council Bluffs",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 7,
+        "rank1b": 8,
+        "rank2b": 12,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.822955,
+          42.262118
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "North Linn, Troy Mills",
+        "enrollment": 163,
+        "class": "1A",
+        "headSchool": "North Linn, Troy Mills",
+        "co-opingSchools": "",
+        "rank0g": 11,
+        "rank1g": 12,
+        "rank2g": 15,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 16,
+        "rank1b": 16,
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.6615,
+          42.291
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Cascade, Western Dubuque",
+        "enrollment": 174,
+        "class": "1A",
+        "headSchool": "Cascade, Western Dubuque",
+        "co-opingSchools": "",
+        "rank0g": 6,
+        "rank1g": 16,
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 13,
+        "rank1b": 15,
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.018142,
+          42.3008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Hudson",
+        "enrollment": 175,
+        "class": "1A",
+        "headSchool": "Hudson",
+        "co-opingSchools": "",
+        "rank0g": 3,
+        "rank1g": 3,
+        "rank2g": 6,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.4554671,
+          42.406653
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Maquoketa Valley, Delhi",
+        "enrollment": 151,
+        "class": "1A",
+        "headSchool": "Maquoketa Valley, Delhi",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 3,
+        "rank1b": 3,
+        "rank2b": 3,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.3309789,
+          42.4297143
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Siouxland Christian",
+        "enrollment": 53,
+        "class": "1A",
+        "headSchool": "Siouxland Christian",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": 16,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.328933,
+          42.474829
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Ridge View",
+        "enrollment": 153,
+        "class": "1A",
+        "headSchool": "Ridge View",
+        "co-opingSchools": "",
+        "rank0g": 15,
+        "rank1g": 16,
+        "rank2g": 16,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.5372,
+          42.487526
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "St. Edmond, Fort Dodge",
+        "enrollment": 141,
+        "class": "1A",
+        "headSchool": "St. Edmond, Fort Dodge",
+        "co-opingSchools": "",
+        "rank0g": 16,
+        "rank1g": 13,
+        "rank2g": 13,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": 13,
+        "rank2b": 14,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.167149,
+          42.511044
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Aplington-Parkersburg",
+        "enrollment": 180,
+        "class": "1A",
+        "headSchool": "Aplington-Parkersburg",
+        "co-opingSchools": "",
+        "rank0g": 5,
+        "rank1g": 10,
+        "rank2g": 3,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.8845695,
+          42.5820329
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Denver",
+        "enrollment": 179,
+        "class": "1A",
+        "headSchool": "Denver",
+        "co-opingSchools": "",
+        "rank0g": 7,
+        "rank1g": 4,
+        "rank2g": 2,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 12,
+        "rank1b": 7,
+        "rank2b": 6,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.3374045,
+          42.6713718
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Central, Elkader",
+        "enrollment": 94,
+        "class": "1A",
+        "headSchool": "Central, Elkader",
+        "co-opingSchools": "",
+        "rank0g": 16,
+        "rank1g": 5,
+        "rank2g": 5,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.4054159,
+          42.8538739
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Sioux Central, Sioux Rapids",
+        "enrollment": 174,
+        "class": "1A",
+        "headSchool": "Sioux Central, Sioux Rapids",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 16,
+        "rank1b": 16,
+        "rank2b": 16,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.1511051,
+          42.8933093
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "North Butler, Greene",
+        "enrollment": 119,
+        "class": "1A",
+        "headSchool": "North Butler, Greene",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 16,
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.8024158,
+          42.8958066
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "West Fork, Sheffield",
+        "enrollment": 147,
+        "class": "1A",
+        "headSchool": "West Fork, Sheffield",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": 16,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": 10,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.218,
+          42.897469
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Nashua-Plainfield",
+        "enrollment": 119,
+        "class": "1A",
+        "headSchool": "Nashua-Plainfield",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": 16,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.5386382,
+          42.9522221
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "South O'Brien, Paullina",
+        "enrollment": 153,
+        "class": "1A",
+        "headSchool": "South O'Brien, Paullina",
+        "co-opingSchools": "",
+        "rank0g": 16,
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.6880657,
+          42.9791479
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Newman Catholic, Mason City",
+        "enrollment": 106,
+        "class": "1A",
+        "headSchool": "Newman Catholic, Mason City",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": 8,
+        "rank2g": 8,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 11,
+        "rank1b": 10,
+        "rank2b": 16,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2393,
+          43.1328
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "South Winneshiek",
+        "enrollment": 141,
+        "class": "1A",
+        "headSchool": "South Winneshiek, Calmar",
+        "co-opingSchools": "",
+        "rank0g": 13,
+        "rank1g": 15,
+        "rank2g": 14,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 6,
+        "rank1b": 5,
+        "rank2b": 5,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.8640482,
+          43.1835847
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Trinity Christian High School",
+        "enrollment": 57,
+        "class": "1A",
+        "headSchool": "Trinity Christian High School",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": 15,
+        "rank1b": 16,
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.148165,
+          43.195
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Kee, Lansing",
+        "enrollment": 102,
+        "class": "1A",
+        "headSchool": "Kee, Lansing",
+        "co-opingSchools": "",
+        "rank0g": 4,
+        "rank1g": 6,
+        "rank2g": 4,
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": "",
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": "",
+        "rankAvgb": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.2218,
+          43.3603
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "teamName": "Saint Ansgar",
+        "enrollment": 137,
+        "class": "1A",
+        "headSchool": "Saint Ansgar",
+        "co-opingSchools": "",
+        "rank0g": "",
+        "rank1g": "",
+        "rank2g": "",
+        "rank3g": "",
+        "rank4g": "",
+        "rank5g": "",
+        "rank6g": "",
+        "rank7g": "",
+        "rank8g": "",
+        "rank0b": "",
+        "rank1b": "",
+        "rank2b": 15,
+        "rank3b": "",
+        "rank4b": "",
+        "rank5b": "",
+        "rank6b": "",
+        "rank7b": "",
+        "rank8b": "",
+        "rankAvgg": ""
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.9203887,
+          43.3784811
         ]
       }
     }
