@@ -70,16 +70,19 @@ function forEachFeature_district(feature, layer) {
 
 
 function forEachFeature_rank(feature, layer) {
-        var popupContent = "<p> <b>" + feature.properties.headSchool +
-            "</b></br>Week 0: "+ feature.properties.ranking0 +
-            "</b></br>Week 1: "+ feature.properties.ranking1 +
-            "</b></br>Week 2: "+ feature.properties.ranking2 +
-            "</b></br>Week 3: "+ feature.properties.ranking3 +
-            "</b></br>Week 4: "+ feature.properties.ranking4 +
-            "</b></br>Week 5: "+ feature.properties.ranking5 +
-            "</b></br>Week 6: "+ feature.properties.ranking6 +
-            "</b></br>Week 7: "+ feature.properties.ranking7 +
-            "</b></br>Week 8: "+ feature.properties.ranking8 +"</p>";
+        var popupContent = "<strong>" + feature.properties.teamName + "</strong><br>" +
+        	"Enrollment: "+ feature.properties.enrollment + ", Class: "+ feature.properties.class + "<br>" +
+        	"<table> <tr> <th>Week</th> <th>Girls</th> <th>Boys</th> </tr>" +
+            "<tr><td>0: </td><td>" + feature.properties.rank0g + "</td><td>"+ feature.properties.rank0b + "</td></tr>" +
+            "<tr><td>1: </td><td>" + feature.properties.rank1g + "</td><td>"+ feature.properties.rank1b + "</td></tr>" +
+            "<tr><td>2: </td><td>" + feature.properties.rank2g + "</td><td>"+ feature.properties.rank2b + "</td></tr>" +
+            "<tr><td>3: </td><td>" + feature.properties.rank3g + "</td><td>"+ feature.properties.rank3b + "</td></tr>" +
+            "<tr><td>4: </td><td>" + feature.properties.rank4g + "</td><td>"+ feature.properties.rank4b + "</td></tr>" +
+            "<tr><td>5: </td><td>" + feature.properties.rank5g + "</td><td>"+ feature.properties.rank5b + "</td></tr>" +
+            "<tr><td>6: </td><td>" + feature.properties.rank6g + "</td><td>"+ feature.properties.rank6b + "</td></tr>" +
+            "<tr><td>7: </td><td>" + feature.properties.rank7g + "</td><td>"+ feature.properties.rank7b + "</td></tr>" +
+            "<tr><td>8: </td><td>" + feature.properties.rank8g + "</td><td>"+ feature.properties.rank8b + "</td></tr>" +
+            "</table>";
         layer.bindPopup(popupContent);
 }
 
@@ -141,7 +144,15 @@ var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/di
 
 
 
+
+
+var colorFilter = function (feature) {
+if (feature.properties.rank2b !== "") return true}
+
+
+
 var rankedSchools  = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+	 filter: colorFilter,
 	onEachFeature: forEachFeature_rank,
     pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, rankingMarkerOptions);
