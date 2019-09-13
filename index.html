@@ -34,6 +34,18 @@
 		tr:nth-child(even) {
 		  background-color: #dddddd;
 		}
+
+		.rank1-div-icon {
+			width: 50px;
+			background-color: grey;
+			text-align: center;
+			border:2px solid black;
+			height: 50px;
+			border-radius: 50%
+
+		}
+
+
 </style>
 
 
@@ -194,13 +206,113 @@ var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/sc
 			fillOpacity: 0.8
      });
     }
+});
+
+//.addTo(map);
+
+
+
+
+
+
+
+var myDivIcon1 = L.divIcon({
+  // iconSize: new L.Point(40, 20),
+  // iconAnchor: new L.Point(20, 20),
+   className: 'rank1-div-icon'
+});
+
+
+
+
+var rankedSchools2 = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+	filter: colorFilter,
+	  pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, {
+	                icon: myDivIcon1,
+	                });
+            }
+
+
 }).addTo(map);
 
 
 
+/*
+var marker1 = L.marker ([43.05, -93.1],{
+     icon: myDivIcon1,
+ }).addTo(map).bindPopup('I am marker 1.');
+*/
 
 
 
+
+
+
+
+
+
+/*
+var allCounties = "https://raw.githubusercontent.com/ISUEOGTP/GeoJSON/master/US_Counties.json";
+
+//US_Counties.json
+new L.GeoJSON.AJAX(allCounties, {
+	filter: function(feature, layer) {
+		if (feature.properties.STATE == 19) {
+			return 'true'
+		}
+	}
+}
+).addTo(map);
+
+*/
+
+
+//-----------------
+
+/*
+
+function refilterLayer(varState) {
+
+// remove the layer if it exists - you'll have to look up how to do that
+
+   var geojsonLayer = L.geoJson(data, {
+    pointToLayer: function (feature, latlng) {
+      return L.circleMarker(latlng, {
+        radius: 5.0,
+        fillColor: '#e1118e',
+        color: '#000000',
+        weight: 1,
+        opacity: 1.0,
+        fillOpacity: 1.0
+        })
+      },
+      filter: function(feature, layer) {
+      if (varState == "01") {
+     return (feature.properties.field1 == "yes" &&   feature.properties.field2 == "yes");
+      }
+      else if (varState == "02") {
+        return (feature.properties.field1 == "yes" && feature.properties.field2 == "no");
+       }
+       else {
+         return feature.properties.field1 == "yes";
+       }
+
+   }).addTo(map);
+
+ }
+
+}
+
+
+
+// Call the refilter function from the button click event
+     $("#button1").click(function() {
+           refilterLayer('01');
+       });
+
+
+*/
 
 
         //layer control
