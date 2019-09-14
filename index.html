@@ -2,9 +2,9 @@
 <html>
 
 <head>
-    <title>Mapping API's: Leaflet - Layer Control</title>
-    <meta name="description" content="Mapping API's: Leaflet - Layer Control" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <title>Mapping API's:  - Layer Control</title>
+    <meta name="description" content="Mapping API's:  - Layer Control" />
+    <link rel="stylesheet" href="https://unpkg.com/@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
     <script src="classes/leaflet.ajax.js"></script>
 
@@ -35,15 +35,167 @@
 		  background-color: #dddddd;
 		}
 
+
 		.rank1-div-icon {
-			width: 50px;
-			background-color: grey;
+			background-color: red;
 			text-align: center;
 			border:2px solid black;
-			height: 50px;
-			border-radius: 50%
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+		.rank2-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+		.rank3-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+
+		.rank4-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+
+		.rank4-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+		.rank5-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+		.rank6-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
 
 		}
+
+				.rank7-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+				.rank8-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+				.rank9-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+
+
+		.rank10-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+
+		.rank11-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+
+				.rank12-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+				.rank13-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+		.rank14-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+		.rank15-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
+		.rankW-div-icon {
+			background-color: red;
+			text-align: center;
+			border:2px solid black;
+			border-radius: 50%;
+			background-color: grey;
+			padding-top: 4px;
+		}
+
 
 
 </style>
@@ -80,10 +232,16 @@
 
 
 
+var sidewalks = L.tileLayer("https://api.mapbox.com/styles/v1/prof-cjseeger/ck0ihf7664fyu1co605s4ukub/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicHJvZi1janNlZWdlciIsImEiOiJjaXQ1emQwc2QwMjI4MnBxMDRpbnozcG52In0.Ms24ScMgfKOKgLj0zuQqcw", {
+	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+});
+
+
+
         //create the map
         var map = L.map('map', {
-            center: new L.LatLng(42.7, -93.2),
-            zoom: 7,
+            center: new L.LatLng(42.3, -94.2),
+            zoom: 10,
             layers: [OSM]
         });
 
@@ -212,25 +370,158 @@ var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/sc
 
 
 
-
-
-
-
 var myDivIcon1 = L.divIcon({
-  // iconSize: new L.Point(40, 20),
-  // iconAnchor: new L.Point(20, 20),
-   className: 'rank1-div-icon'
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank1-div-icon',
+   html: 1
+});
+
+var myDivIcon2 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank2-div-icon',
+   html: 2
+});
+
+var myDivIcon3 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank3-div-icon',
+      html: 3
+});
+
+var myDivIcon4 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank4-div-icon',
+   html: 4
+});
+
+
+var myDivIcon5 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank5-div-icon',
+   html: 5
+});
+
+var myDivIcon6 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank6-div-icon',
+   html: 6
+});
+
+var myDivIcon7 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank7-div-icon',
+   html: 7
+});
+
+var myDivIcon8 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank8-div-icon',
+   html: 8
+});
+
+var myDivIcon9 = L.divIcon({
+ iconSize: new L.Point(25, 21),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank9-div-icon',
+   html: 9
+});
+
+var myDivIcon10 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank10-div-icon',
+   html: 10
+});
+
+var myDivIcon11 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank11-div-icon',
+   html: 11
+});
+
+var myDivIcon12 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank12-div-icon',
+   html: 12
+});
+
+var myDivIcon13 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank13-div-icon',
+   html: 13
+});
+
+var myDivIcon14 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank14-div-icon',
+   html: 14
+});
+
+var myDivIcon15 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rank15-div-icon',
+   html: 15
+});
+
+var myDivIcon16 = L.divIcon({
+ iconSize: new L.Point(25, 25),
+  iconAnchor: new L.Point(0, 0),
+   className: 'rankW-div-icon',
+   html: 'W'
 });
 
 
 
 
+
+
+
+
+
+
+function getIcon(d) {
+	return d = 16 ? myDivIconW :
+/*	       d = 15  ? myDivIcon15 :
+	       d = 14  ? myDivIcon14 :
+	       d = 13  ? myDivIcon13 :
+		   d = 12  ? myDivIcon12 :
+		   d > 11  ? myDivIcon11 :
+		   d > 10  ? myDivIcon10 :
+		   d > 9  ? myDivIcon9 :
+		   d > 8  ? myDivIcon8 :
+		   d > 7  ? myDivIcon7 :
+		   d > 6  ? myDivIcon6 :
+		   d > 5  ? myDivIcon5 :
+		   d > 4  ? myDivIcon4 :
+		   d > 2  ? myDivIcon3 :
+		   d > 2  ? myDivIcon2 :
+*/		   d > 1  ? myDivIcon1 :
+	                  myDivIcon1;
+}
+
+
+
+
 var rankedSchools2 = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+	onEachFeature: forEachFeature_rank,
 	filter: colorFilter,
 	  pointToLayer: function (feature, latlng) {
-                return L.marker(latlng, {
-	                icon: myDivIcon1,
-	                });
+         return L.marker(latlng, {
+	        icon:  getIcon(feature.properties.rank2b),
+	          });
             }
 
 
@@ -324,7 +615,8 @@ function refilterLayer(varState) {
         var overlayMaps = {
             "Radar": nexrad,
             "District Sites": districtMeets,
-            "Ranked Schools": rankedSchools
+            "Ranked Schools": rankedSchools,
+            "Sidewalks": sidewalks
 
         };
 
