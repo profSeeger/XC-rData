@@ -202,9 +202,8 @@
       }
 
 	  .rankN-div-icon {
-        background-color: black;
-        border: 0px solid black;
-        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.8);
+        border-radius: 15%;
       }
 
 
@@ -273,7 +272,31 @@
       }
 
 
+
+
       function forEachFeature_rank(feature, layer) {
+
+	  if (feature.properties.rank0g == '20' || feature.properties.rank0g == '') {feature.properties.rank0g = "-";}
+      if (feature.properties.rank1g == '20' || feature.properties.rank1g == '') {feature.properties.rank1g = "-";}
+      if (feature.properties.rank2g == '20' || feature.properties.rank2g == '') {feature.properties.rank2g = "-";}
+      if (feature.properties.rank3g == '20' || feature.properties.rank3g == '') {feature.properties.rank3g = "-";}
+      if (feature.properties.rank4g == '20' || feature.properties.rank4g == '') {feature.properties.rank4g = "-";}
+      if (feature.properties.rank5g == '20' || feature.properties.rank5g == '') {feature.properties.rank5g = "-";}
+      if (feature.properties.rank6g == '20' || feature.properties.rank6g == '') {feature.properties.rank6g = "-";}
+      if (feature.properties.rank7g == '20' || feature.properties.rank7g == '') {feature.properties.rank7g = "-";}
+      if (feature.properties.rank8g == '20' || feature.properties.rank8g == '') {feature.properties.rank8g = "-";}
+
+      if (feature.properties.rank0b == '20' || feature.properties.rank0b == '') {feature.properties.rank0b = "-";}
+      if (feature.properties.rank1b == '20' || feature.properties.rank1b == '') {feature.properties.rank1b = "-";}
+      if (feature.properties.rank2b == '20' || feature.properties.rank2b == '') {feature.properties.rank2b = "-";}
+      if (feature.properties.rank3b == '20' || feature.properties.rank3b == '') {feature.properties.rank3b = "-";}
+      if (feature.properties.rank4b == '20' || feature.properties.rank4b == '') {feature.properties.rank4b = "-";}
+      if (feature.properties.rank5b == '20' || feature.properties.rank5b == '') {feature.properties.rank5b = "-";}
+      if (feature.properties.rank6b == '20' || feature.properties.rank6b == '') {feature.properties.rank6b = "-";}
+      if (feature.properties.rank7b == '20' || feature.properties.rank7b == '') {feature.properties.rank7b = "-";}
+      if (feature.properties.rank8b == '20' || feature.properties.rank8b == '') {feature.properties.rank8b = "-";}
+
+
         var popupContent = "<strong>" + feature.properties.teamName + "</strong><br>" +
           "Enrollment: " + feature.properties.enrollment + ", Class: " + feature.properties.class + "<br>" +
           "<table> <tr> <th>Week</th> <th>Girls</th> <th>Boys</th> </tr>" +
@@ -466,7 +489,7 @@
       });
 
 	  var myDivIconN = L.divIcon({
-		iconSize: new L.Point(5, 5),
+		iconSize: new L.Point(6, 6),
         className: 'rankN-div-icon',
              });
 
@@ -501,7 +524,7 @@
 
 
       var schoolFilter = function(feature) {
-        if (feature.properties.rank2b !== "") return true
+        if (feature.properties.rankAvgb > 0) return true
       }
 
 
