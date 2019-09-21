@@ -16,6 +16,8 @@
     <script src="classes/leaflet.ajax.js"></script>
 
 
+    <link rel="stylesheet" href="https://profseeger.github.io/XC-rData/css/rank-div.css" />
+
 
     <style>
       html,
@@ -43,173 +45,32 @@
         background-color: #dddddd;
       }
 
-
-      .rank1-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
+      #container {
+	      height: 100%;
+	      background-color: yellow;
       }
 
-      .rank2-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
+      #container_header {
+	      position: absolute;
+       top: 0px;
+       height: 100px;
+       width: 100%;
+	      background-color:green;
       }
 
-      .rank3-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
+           #container_main {
+	             position: absolute;
+       top: 100px; /* Header Height */
+       bottom: 10px; /* Footer Height */
+       width: 100%;
       }
 
-
-      .rank4-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-
-      .rank4-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rank5-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rank6-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-
-      }
-
-      .rank7-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rank8-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rank9-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rank10-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rank11-div-icon {
-	      font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-
-      .rank12-div-icon {
-       font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rank13-div-icon {
-        font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rank14-div-icon {
-        font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rank15-div-icon {
-	    font-size: xx-small;
-        background-color: red;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 50%;
-        padding-top: 2px;
-      }
-
-      .rankW-div-icon {
-	    font-size: xx-small;
-        text-align: center;
-        border: 2px solid black;
-        border-radius: 20%;
-        background-color: white;
-        padding-top: 1px;
-      }
-
-	  .rankN-div-icon {
-        background-color: rgba(0, 0, 0, 0.8);
-        border-radius: 15%;
-      }
-
-
-     .rank-div-icon {
-        background-color: yellow;
-
+     #container_footer {
+	      position: absolute;
+       bottom: 0px; /* Header Height */
+       height: 10px;
+	      background-color: green;
+	       width: 100%;
       }
 
     </style>
@@ -221,7 +82,12 @@
   </head>
 
   <body>
-    <div id="map"></div>
+	  <div id="container_header">-</div>
+	  <div id="container_main">
+		     <div id="map"></div>
+	  </div>
+	  <div id="container_footer"></div>
+
 
 
     <script>
