@@ -401,7 +401,7 @@
         onEachFeature: forEachFeature_rank,
         pointToLayer: function(feature, latlng) {
           return L.marker(latlng, {
-           icon: getIcon(feature.properties.rank3b),
+           icon: getIcon(feature.properties.rank4b),
             //icon: getIcon(2),
           });
         }
@@ -417,7 +417,7 @@
         pointToLayer: function(feature, latlng) {
           return L.circleMarker(latlng, {
             radius: 1, //expressed in pixels
-            fillColor: getColor(feature.properties.rank3b),
+            fillColor: getColor(feature.properties.rank4b),
             color: "#000", //black outline
             weight: 1, //outline width
             opacity: 1, //line opacity
