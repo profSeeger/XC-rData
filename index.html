@@ -435,14 +435,14 @@
 
 
       function getWeightedColor(d) {
-        d < 20 ? '#000' :
-          d < 12 ? '#BD0026' :
-          d < 10 ? '#E31A1C' :
-          d < 8 ? '#FC4E2A' :
-          d < 6 ? '#FD8D3C' :
-          d < 4 ? '#FEB24C' :
-          d < 2 ? '#FED976' :
-          '#aaa';
+	      d = parseFloat(d);
+         return d >= 20 ? '#fff' :
+          d > 15 ? 'grey' :
+          d > 10 ? 'yellow' :
+          d > 10 ? 'orange' :
+          d > 5 ? 'red' :
+          d > 2 ? 'blue' :
+          '#fff';
       }
 
 
@@ -451,21 +451,17 @@
         filter: schoolFilter,
         onEachFeature: forEachFeature_rank,
         pointToLayer: function(feature, latlng) {
-          return L.circleMarker(latlng, {
+          return new L.circleMarker(latlng, {
             radius: 7, //expressed in pixels
-            color: "#fff", //black outline
-            fill: "tan", //getWeightedColor(feature.properties.rankAvgb),
-
+            fillOpacity: 1.0,
+            fillColor: getWeightedColor(feature.properties.rankAvgb),
+			color: "red", //black outline
             weight: 1, //outline width
             opacity: 1, //line opacity
-            fillOpacity: 1.0
+
           });
         }
       }).addTo(map);
-
-
-
-
 
 
 
