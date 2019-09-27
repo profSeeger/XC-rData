@@ -5,6 +5,7 @@
     <title>Cross Country Map 2019</title>
     <meta name="description" content="Mapping API's:  - Layer Control" />
 
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-zrnmn8R8KkWl12rAZFt4yKjxplaDaT7/EUkKm7AovijfrQItFWR7O/JJn4DAa/gx" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 
@@ -82,7 +83,16 @@
   </head>
 
   <body>
-	  <div id="container_header"></div>
+	  <div id="container_header">
+		  <span style="font-size: 12px; color: Dodgerblue;">
+		  	<i class="fas fa-camera"></i>
+		  </span>
+		  <i class="fas fa-running"></i>
+		  <i class="far fa-camera"></i>
+		  <i class="fal fa-camera"></i>
+		  <i class="fad fa-camera"></i>
+		  <i class="fab fa-camera"></i>
+		  </div>
 	  <div id="container_main">
 		     <div id="map"></div>
 	  </div>
@@ -125,6 +135,10 @@
       });
 
 
+
+      L.marker([42., -96.5], {
+        //icon: getIcon()
+      }).addTo(map);
 
 
 
@@ -229,13 +243,40 @@
 
 
 
-
-      var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
+/*
+      var districtMeets1 = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
         onEachFeature: forEachFeature_district,
         // pointToLayer: function (feature, latlng) {
         //     return L.circleMarker(latlng, districtMarkerOptions);
         // }
       }).addTo(map);
+  */
+
+
+
+        var districtDivIcon = L.divIcon({
+        iconSize: new L.Point(15, 15),
+        iconAnchor: new L.Point(0, 0),
+        className: 'districtMeet-div-icon',
+        html: "<i class='far fa-running'></i>"
+      });
+
+//rank1-div-icon
+//districtMeet-div-icon
+
+      var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
+        onEachFeature: forEachFeature_district,
+        pointToLayer: function(feature, latlng) {
+          return L.marker(latlng, {
+           icon: districtDivIcon,
+            //icon: getIcon(2),
+          });
+        }
+      }).addTo(map);
+
+
+
+
 
 
 
@@ -383,11 +424,7 @@
       }
 
 
-/*
-      L.marker([42., -96.5], {
-        icon: getIcon()
-      }).addTo(map);
-*/
+
 
 
       var schoolFilter = function(feature) {
@@ -410,7 +447,7 @@
 
 
 
-
+/*
       var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
         filter: schoolFilter,
         onEachFeature: forEachFeature_rank,
@@ -425,9 +462,9 @@
           });
         }
       });
-      //.addTo(map);
+//.addTo(map);
 
-
+*/
 
 
 

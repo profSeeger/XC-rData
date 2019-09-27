@@ -1,3 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="description" content="">
+<meta charset="utf-8">
+<meta name = "viewport" content = "user-scalable=yes, width=device-width">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Cross Country Result Summary</title>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<style>
+html, body {
+    /*height:100%;*/
+    margin:10;
+    padding:0;
+	height: 100vh;
+}
+</style>
+
+<script>
+
+</script>
+
+</head>
+<body>
+
 <?php
 
 //header('Content-type: text/plain');
@@ -107,38 +134,6 @@ foreach ($nArray as $n) {
 
 $mysqli->close();
 ?>
-
-
-
-
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="description" content="">
-<meta charset="utf-8">
-<meta name = "viewport" content = "user-scalable=no, width=device-width">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title></title>
-
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-
-<style>
-html, body {
-    /*height:100%;*/
-    margin:0;
-    padding:0;
-	height: 100vh;
-}
-</style>
-
-<script>
-
-</script>
-
-</head>
-<body>
-
 
 </body>
 </html>

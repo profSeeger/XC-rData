@@ -1,3 +1,12 @@
+.districtMeet-div-icon {
+        background-color: yellow;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 50%;
+        padding-top: 2px;
+      }
+
+
  .rank1-div-icon {
 	      font-size: xx-small;
         background-color: red;
