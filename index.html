@@ -189,16 +189,7 @@
 
 
 
-      function getColor(d) {
-        d > 15 ? '#800026' :
-          d > 12 ? '#BD0026' :
-          d > 10 ? '#E31A1C' :
-          d > 8 ? '#FC4E2A' :
-          d > 6 ? '#FD8D3C' :
-          d > 4 ? '#FEB24C' :
-          d > 2 ? '#FED976' :
-          '#FFEDA0';
-      }
+
 
 
 
@@ -218,42 +209,34 @@
 
 
 
-      /*
 
-      //feature.properties.rank2b
 
+/*
       var rankingMarkerOptions = {
-          radius: 8,
+          radius: 18,
           fillColor: getColor(10),
           color: "#000",
           weight: 1,
           opacity: 1,
           fillOpacity: 0.8
       };
-      */
 
-
-
-
-
-/*
       var districtMeets1 = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
         onEachFeature: forEachFeature_district,
-        // pointToLayer: function (feature, latlng) {
-        //     return L.circleMarker(latlng, districtMarkerOptions);
-        // }
+        pointToLayer: function (feature, latlng) {
+            return L.circleMarker(latlng, districtMarkerOptions);
+        }
       }).addTo(map);
 */
 
 
-
+//Create and Add District Meet locations
         var districtDivIcon = L.divIcon({
         iconSize: new L.Point(14, 12),
         iconAnchor: new L.Point(7, 14),
         className: 'districtMeet-div-icon',
         html: "<i class='far fa-running'></i>"
       });
-
 
       var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
         onEachFeature: forEachFeature_district,
@@ -439,6 +422,7 @@
 
 
 
+//This draws a default teardrop for each school
 
       var rankedSchoolsTeardrop = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
         onEachFeature: forEachFeature_district,
@@ -449,24 +433,37 @@
 
 
 
-/*
-      var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+
+      function getWeightedColor(d) {
+        d < 20 ? '#000' :
+          d < 12 ? '#BD0026' :
+          d < 10 ? '#E31A1C' :
+          d < 8 ? '#FC4E2A' :
+          d < 6 ? '#FD8D3C' :
+          d < 4 ? '#FEB24C' :
+          d < 2 ? '#FED976' :
+          '#aaa';
+      }
+
+
+
+      var rankedSchoolsWeighted = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
         filter: schoolFilter,
         onEachFeature: forEachFeature_rank,
         pointToLayer: function(feature, latlng) {
           return L.circleMarker(latlng, {
-            radius: 1, //expressed in pixels
-            fillColor: getColor(feature.properties.rank4b),
-            color: "#000", //black outline
+            radius: 7, //expressed in pixels
+            color: "#fff", //black outline
+            fill: "tan", //getWeightedColor(feature.properties.rankAvgb),
+
             weight: 1, //outline width
             opacity: 1, //line opacity
-            fillOpacity: 0.8
+            fillOpacity: 1.0
           });
         }
-      });
-//.addTo(map);
+      }).addTo(map);
 
-*/
+
 
 
 
