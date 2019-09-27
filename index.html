@@ -17,7 +17,7 @@
     <script src="classes/leaflet.ajax.js"></script>
 
 
-    <link rel="stylesheet" href="https://profseeger.github.io/XC-rData/css/rank-div.css" />
+    <link rel="stylesheet" href="css/rank-div.css" />
 
 
     <style>
@@ -27,6 +27,7 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        border: 1px solid #000;
       }
 
       table {
@@ -56,7 +57,8 @@
        top: 0px;
        height: 100px;
        width: 100%;
-	      background-color:green;
+	      background-color:white;
+	      margin: 10px;
       }
 
            #container_main {
@@ -84,14 +86,11 @@
 
   <body>
 	  <div id="container_header">
-		  <span style="font-size: 12px; color: Dodgerblue;">
-		  	<i class="fas fa-camera"></i>
+		  <span style="font-size: 12px; color: black;">
+		  	 <i class="fas fa-running"></i>
 		  </span>
-		  <i class="fas fa-running"></i>
-		  <i class="far fa-camera"></i>
-		  <i class="fal fa-camera"></i>
-		  <i class="fad fa-camera"></i>
-		  <i class="fab fa-camera"></i>
+
+
 		  </div>
 	  <div id="container_main">
 		     <div id="map"></div>
@@ -133,12 +132,6 @@
         zoom: 7,
         layers: [OSM]
       });
-
-
-
-      L.marker([42., -96.5], {
-        //icon: getIcon()
-      }).addTo(map);
 
 
 
@@ -250,19 +243,17 @@
         //     return L.circleMarker(latlng, districtMarkerOptions);
         // }
       }).addTo(map);
-  */
+*/
 
 
 
         var districtDivIcon = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 12),
+        iconAnchor: new L.Point(7, 14),
         className: 'districtMeet-div-icon',
         html: "<i class='far fa-running'></i>"
       });
 
-//rank1-div-icon
-//districtMeet-div-icon
 
       var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
         onEachFeature: forEachFeature_district,
@@ -283,120 +274,121 @@
 
 
       var myDivIcon1 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank1-div-icon',
         html: 1
       });
 
       var myDivIcon2 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank2-div-icon',
         html: 2
       });
 
       var myDivIcon3 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank3-div-icon',
         html: 3
       });
 
       var myDivIcon4 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank4-div-icon',
         html: 4
       });
 
 
       var myDivIcon5 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank5-div-icon',
         html: 5
       });
 
       var myDivIcon6 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank6-div-icon',
         html: 6
       });
 
       var myDivIcon7 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank7-div-icon',
         html: 7
       });
 
       var myDivIcon8 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank8-div-icon',
         html: 8
       });
 
       var myDivIcon9 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank9-div-icon',
         html: 9
       });
 
       var myDivIcon10 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank10-div-icon',
         html: 10
       });
 
       var myDivIcon11 = L.divIcon({
-        iconSize: new L.Point(15, 15),
-        iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank11-div-icon',
         html: 11
       });
 
       var myDivIcon12 = L.divIcon({
-       iconSize: new L.Point(15, 15),
-      iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank12-div-icon',
         html: 12
       });
 
       var myDivIcon13 = L.divIcon({
-      iconSize: new L.Point(15, 15),
-      //  iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank13-div-icon',
         html: 13
       });
 
       var myDivIcon14 = L.divIcon({
-      iconSize: new L.Point(15, 15),
-      //  iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank14-div-icon',
         html: 14
       });
 
       var myDivIcon15 = L.divIcon({
-       iconSize: new L.Point(15, 15),
-       // iconAnchor: new L.Point(0, 0),
+        iconSize: new L.Point(14, 14),
+        iconAnchor: new L.Point(8, 14),
         className: 'rank15-div-icon',
         html: 15
       });
 
       var myDivIcon16 = L.divIcon({
         iconSize: new L.Point(12, 12),
-        iconAnchor: new L.Point(0, 0),
+        iconAnchor: new L.Point(6, 12),
         className: 'rankW-div-icon',
         html: 'W',
       });
 
 	  var myDivIconN = L.divIcon({
 		iconSize: new L.Point(6, 6),
+		iconAnchor: new L.Point(2, 3),
         className: 'rankN-div-icon',
              });
 
@@ -433,7 +425,7 @@
 
 
 
-      var rankedSchools1 = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+      var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
         filter: schoolFilter,
         onEachFeature: forEachFeature_rank,
         pointToLayer: function(feature, latlng) {
@@ -444,6 +436,16 @@
         }
       }).addTo(map);
 
+
+
+
+
+      var rankedSchoolsTeardrop = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+        onEachFeature: forEachFeature_district,
+        // pointToLayer: function (feature, latlng) {
+        //     return L.circleMarker(latlng, districtMarkerOptions);
+        // }
+      });
 
 
 
@@ -540,8 +542,8 @@
       var overlayMaps = {
         "Radar": nexrad,
         "District Sites": districtMeets,
-        // "Ranked Schools": rankedSchools,
-        //  "Sidewalks": sidewalks
+        "Schools": rankedSchools,
+        "Schools blue": rankedSchoolsTeardrop
 
       };
 
