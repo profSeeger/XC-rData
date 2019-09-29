@@ -452,7 +452,7 @@
         onEachFeature: forEachFeature_rank,
         pointToLayer: function(feature, latlng) {
           return new L.circleMarker(latlng, {
-            radius: 7, //expressed in pixels
+            radius: 4, //expressed in pixels
             fillOpacity: 1.0,
             fillColor: getWeightedColor(feature.properties.rankAvgb),
 			color: "red", //black outline
