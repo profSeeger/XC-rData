@@ -5,12 +5,12 @@
     <title>Cross Country Map 2019</title>
     <meta name="description" content="Mapping API's:  - Layer Control" />
 
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-zrnmn8R8KkWl12rAZFt4yKjxplaDaT7/EUkKm7AovijfrQItFWR7O/JJn4DAa/gx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-zrnmn8R8KkWl12rAZFt4yKjxplaDaT7/EUkKm7AovijfrQItFWR7O/JJn4DAa/gx" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
 
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
 
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js" integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og==" crossorigin=""></script>
@@ -20,7 +20,7 @@
 
     <script src="classes/leaflet.ajax.js"></script>
 
-<script src="leafletLayers.js"></script>
+    <script src="leafletLayers.js"></script>
 
 
 
@@ -56,32 +56,35 @@
       }
 
       #container {
-	      height: 100%;
-	      background-color: yellow;
+        height: 100%;
+        background-color: yellow;
       }
 
       #container_header {
-	      position: absolute;
-       top: 0px;
-       height: 100px;
-       width: 100%;
-	      background-color:white;
-	      margin: 10px;
+        position: absolute;
+        top: 0px;
+        height: 100px;
+        width: 100%;
+        background-color: white;
+        margin: 10px;
       }
 
-           #container_main {
-	             position: absolute;
-       top: 100px; /* Header Height */
-       bottom: 10px; /* Footer Height */
-       width: 100%;
+      #container_main {
+        position: absolute;
+        top: 100px;
+        /* Header Height */
+        bottom: 10px;
+        /* Footer Height */
+        width: 100%;
       }
 
-     #container_footer {
-	      position: absolute;
-       bottom: 0px; /* Header Height */
-       height: 10px;
-	      background-color: green;
-	       width: 100%;
+      #container_footer {
+        position: absolute;
+        bottom: 0px;
+        /* Header Height */
+        height: 10px;
+        background-color: green;
+        width: 100%;
       }
 
     </style>
@@ -93,100 +96,25 @@
   </head>
 
   <body>
-	  <div id="container_header">
+    <div id="container_header">
 
-Select Rankings to Show:<br>
-<input type="radio" name="gender" value="b" checked> Boys  <span style="font-size: 12px; color: blue;"><i class="fas fa-running"></i></span><br>
-<input type="radio" name="gender" value="g"> Girls  <span style="font-size: 12px; color: red;"><i class="fas fa-running"></i></span><br>
-Class:<br>
-<input type="radio" name="class" value="1A"> 1A<br>
+      Select Rankings to Show:<br>
+      <input type="radio" name="gender" value="b" checked> Boys <span style="font-size: 12px; color: blue;"><i class="fas fa-running"></i></span><br>
+      <input type="radio" name="gender" value="g"> Girls <span style="font-size: 12px; color: red;"><i class="fas fa-running"></i></span><br>
+      Class:<br>
+      <input type="radio" name="class" value="1A"> 1A<br>
 
 
-		  </div>
-	  <div id="container_main">
-		     <div id="map"></div>
-	  </div>
-	  <div id="container_footer"></div>
+    </div>
+    <div id="container_main">
+      <div id="map"></div>
+    </div>
+    <div id="container_footer"></div>
 
 
 
     <script>
-
-
-	     $(document).ready(function () {
-
-
-
-
-
-
-
-      /*
-      var sidewalks = L.tileLayer("https://api.mapbox.com/styles/v1/prof-cjseeger/ck0ihf7664fyu1co605s4ukub/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicHJvZi1janNlZWdlciIsImEiOiJjaXQ1emQwc2QwMjI4MnBxMDRpbnozcG52In0.Ms24ScMgfKOKgLj0zuQqcw", {
-      	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-      });
-
-      */
-
-      //create the map
-      var map = L.map('map', {
-        center: new L.LatLng(42.0, -93.4),
-        zoom: 7,
-        layers: [Esri_WorldGrayCanvas]
-      });
-
-
-
-
-
-
-      function forEachFeature_district(feature, layer) {
-        var popupContent = "<p> <b>" + feature.properties.location +
-          "</b></br>Class: " + feature.properties.class + "</p>";
-        layer.bindPopup(popupContent);
-      }
-
-
-
-
-      function forEachFeature_rank(feature, layer) {
-
-	  if (feature.properties.rank0g == '20' || feature.properties.rank0g == '') {feature.properties.rank0g = "-";}
-      if (feature.properties.rank1g == '20' || feature.properties.rank1g == '') {feature.properties.rank1g = "-";}
-      if (feature.properties.rank2g == '20' || feature.properties.rank2g == '') {feature.properties.rank2g = "-";}
-      if (feature.properties.rank3g == '20' || feature.properties.rank3g == '') {feature.properties.rank3g = "-";}
-      if (feature.properties.rank4g == '20' || feature.properties.rank4g == '') {feature.properties.rank4g = "-";}
-      if (feature.properties.rank5g == '20' || feature.properties.rank5g == '') {feature.properties.rank5g = "-";}
-      if (feature.properties.rank6g == '20' || feature.properties.rank6g == '') {feature.properties.rank6g = "-";}
-      if (feature.properties.rank7g == '20' || feature.properties.rank7g == '') {feature.properties.rank7g = "-";}
-      if (feature.properties.rank8g == '20' || feature.properties.rank8g == '') {feature.properties.rank8g = "-";}
-
-      if (feature.properties.rank0b == '20' || feature.properties.rank0b == '') {feature.properties.rank0b = "-";}
-      if (feature.properties.rank1b == '20' || feature.properties.rank1b == '') {feature.properties.rank1b = "-";}
-      if (feature.properties.rank2b == '20' || feature.properties.rank2b == '') {feature.properties.rank2b = "-";}
-      if (feature.properties.rank3b == '20' || feature.properties.rank3b == '') {feature.properties.rank3b = "-";}
-      if (feature.properties.rank4b == '20' || feature.properties.rank4b == '') {feature.properties.rank4b = "-";}
-      if (feature.properties.rank5b == '20' || feature.properties.rank5b == '') {feature.properties.rank5b = "-";}
-      if (feature.properties.rank6b == '20' || feature.properties.rank6b == '') {feature.properties.rank6b = "-";}
-      if (feature.properties.rank7b == '20' || feature.properties.rank7b == '') {feature.properties.rank7b = "-";}
-      if (feature.properties.rank8b == '20' || feature.properties.rank8b == '') {feature.properties.rank8b = "-";}
-
-
-        var popupContent = "<strong>" + feature.properties.teamName + "</strong><br>" +
-          "Enrollment: " + feature.properties.enrollment + ", Class: " + feature.properties.class + "<br>" +
-          "<table> <tr> <th>Week</th> <th>Girls</th> <th>Boys</th> </tr>" +
-          "<tr><td>0: </td><td>" + feature.properties.rank0g + "</td><td>" + feature.properties.rank0b + "</td></tr>" +
-          "<tr><td>1: </td><td>" + feature.properties.rank1g + "</td><td>" + feature.properties.rank1b + "</td></tr>" +
-          "<tr><td>2: </td><td>" + feature.properties.rank2g + "</td><td>" + feature.properties.rank2b + "</td></tr>" +
-          "<tr><td>3: </td><td>" + feature.properties.rank3g + "</td><td>" + feature.properties.rank3b + "</td></tr>" +
-          "<tr><td>4: </td><td>" + feature.properties.rank4g + "</td><td>" + feature.properties.rank4b + "</td></tr>" +
-          "<tr><td>5: </td><td>" + feature.properties.rank5g + "</td><td>" + feature.properties.rank5b + "</td></tr>" +
-          "<tr><td>6: </td><td>" + feature.properties.rank6g + "</td><td>" + feature.properties.rank6b + "</td></tr>" +
-          "<tr><td>7: </td><td>" + feature.properties.rank7g + "</td><td>" + feature.properties.rank7b + "</td></tr>" +
-          "<tr><td>8: </td><td>" + feature.properties.rank8g + "</td><td>" + feature.properties.rank8b + "</td></tr>" +
-          "</table>";
-        layer.bindPopup(popupContent);
-      }
+      $(document).ready(function() {
 
 
 
@@ -194,350 +122,465 @@ Class:<br>
 
 
 
+        /*
+        var sidewalks = L.tileLayer("https://api.mapbox.com/styles/v1/prof-cjseeger/ck0ihf7664fyu1co605s4ukub/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicHJvZi1janNlZWdlciIsImEiOiJjaXQ1emQwc2QwMjI4MnBxMDRpbnozcG52In0.Ms24ScMgfKOKgLj0zuQqcw", {
+        	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        });
+
+        */
+
+        //create the map
+        var map = L.map('map', {
+          center: new L.LatLng(42.0, -93.4),
+          zoom: 7,
+          layers: [Esri_WorldGrayCanvas]
+        });
 
 
-      /*
-      var districtMarkerOptions = {
-          radius: 5,
-          fillColor: "blue",
-          color: "#000",
-          weight: 1,
-          opacity: 1,
-          fillOpacity: 0.8
-      };
-
-
-      */
 
 
 
+
+        function forEachFeature_district(feature, layer) {
+          var popupContent = "<p> <b>" + feature.properties.location +
+            "</b></br>Class: " + feature.properties.class + "</p>";
+          layer.bindPopup(popupContent);
+        }
+
+
+
+
+        function forEachFeature_rank(feature, layer) {
+
+          if (feature.properties.rank0g == '20' || feature.properties.rank0g == '') {
+            feature.properties.rank0g = "-";
+          }
+          if (feature.properties.rank1g == '20' || feature.properties.rank1g == '') {
+            feature.properties.rank1g = "-";
+          }
+          if (feature.properties.rank2g == '20' || feature.properties.rank2g == '') {
+            feature.properties.rank2g = "-";
+          }
+          if (feature.properties.rank3g == '20' || feature.properties.rank3g == '') {
+            feature.properties.rank3g = "-";
+          }
+          if (feature.properties.rank4g == '20' || feature.properties.rank4g == '') {
+            feature.properties.rank4g = "-";
+          }
+          if (feature.properties.rank5g == '20' || feature.properties.rank5g == '') {
+            feature.properties.rank5g = "-";
+          }
+          if (feature.properties.rank6g == '20' || feature.properties.rank6g == '') {
+            feature.properties.rank6g = "-";
+          }
+          if (feature.properties.rank7g == '20' || feature.properties.rank7g == '') {
+            feature.properties.rank7g = "-";
+          }
+          if (feature.properties.rank8g == '20' || feature.properties.rank8g == '') {
+            feature.properties.rank8g = "-";
+          }
+
+          if (feature.properties.rank0b == '20' || feature.properties.rank0b == '') {
+            feature.properties.rank0b = "-";
+          }
+          if (feature.properties.rank1b == '20' || feature.properties.rank1b == '') {
+            feature.properties.rank1b = "-";
+          }
+          if (feature.properties.rank2b == '20' || feature.properties.rank2b == '') {
+            feature.properties.rank2b = "-";
+          }
+          if (feature.properties.rank3b == '20' || feature.properties.rank3b == '') {
+            feature.properties.rank3b = "-";
+          }
+          if (feature.properties.rank4b == '20' || feature.properties.rank4b == '') {
+            feature.properties.rank4b = "-";
+          }
+          if (feature.properties.rank5b == '20' || feature.properties.rank5b == '') {
+            feature.properties.rank5b = "-";
+          }
+          if (feature.properties.rank6b == '20' || feature.properties.rank6b == '') {
+            feature.properties.rank6b = "-";
+          }
+          if (feature.properties.rank7b == '20' || feature.properties.rank7b == '') {
+            feature.properties.rank7b = "-";
+          }
+          if (feature.properties.rank8b == '20' || feature.properties.rank8b == '') {
+            feature.properties.rank8b = "-";
+          }
+
+
+          var popupContent = "<strong>" + feature.properties.teamName + "</strong><br>" +
+            "Enrollment: " + feature.properties.enrollment + ", Class: " + feature.properties.class + "<br>" +
+            "<table> <tr> <th>Week</th> <th>Girls</th> <th>Boys</th> </tr>" +
+            "<tr><td>0: </td><td>" + feature.properties.rank0g + "</td><td>" + feature.properties.rank0b + "</td></tr>" +
+            "<tr><td>1: </td><td>" + feature.properties.rank1g + "</td><td>" + feature.properties.rank1b + "</td></tr>" +
+            "<tr><td>2: </td><td>" + feature.properties.rank2g + "</td><td>" + feature.properties.rank2b + "</td></tr>" +
+            "<tr><td>3: </td><td>" + feature.properties.rank3g + "</td><td>" + feature.properties.rank3b + "</td></tr>" +
+            "<tr><td>4: </td><td>" + feature.properties.rank4g + "</td><td>" + feature.properties.rank4b + "</td></tr>" +
+            "<tr><td>5: </td><td>" + feature.properties.rank5g + "</td><td>" + feature.properties.rank5b + "</td></tr>" +
+            "<tr><td>6: </td><td>" + feature.properties.rank6g + "</td><td>" + feature.properties.rank6b + "</td></tr>" +
+            "<tr><td>7: </td><td>" + feature.properties.rank7g + "</td><td>" + feature.properties.rank7b + "</td></tr>" +
+            "<tr><td>8: </td><td>" + feature.properties.rank8g + "</td><td>" + feature.properties.rank8b + "</td></tr>" +
+            "</table>";
+          layer.bindPopup(popupContent);
+        }
+
+
+
+
+
+
+
+
+
+        /*
+        var districtMarkerOptions = {
+            radius: 5,
+            fillColor: "blue",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.8
+        };
+
+
+        */
+
+
+
+
+
+        /*
+              var rankingMarkerOptions = {
+                  radius: 18,
+                  fillColor: getColor(10),
+                  color: "#000",
+                  weight: 1,
+                  opacity: 1,
+                  fillOpacity: 0.8
+              };
+
+              var districtMeets1 = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
+                onEachFeature: forEachFeature_district,
+                pointToLayer: function (feature, latlng) {
+                    return L.circleMarker(latlng, districtMarkerOptions);
+                }
+              }).addTo(map);
+        */
+
+
+        //Create and Add District Meet locations
+        var districtDivIcon = L.divIcon({
+          iconSize: new L.Point(14, 12),
+          iconAnchor: new L.Point(7, 14),
+          className: 'districtMeet-div-icon',
+          html: "<i class='far fa-running'></i>"
+        });
+
+        var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
+          onEachFeature: forEachFeature_district,
+          pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {
+              icon: districtDivIcon,
+              //icon: getIcon(2),
+            });
+          }
+        }).addTo(map);
+
+
+
+
+
+
+
+
+
+        var myDivIcon1 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank1-div-icon',
+          html: 1
+        });
+
+        var myDivIcon2 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank2-div-icon',
+          html: 2
+        });
+
+        var myDivIcon3 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank3-div-icon',
+          html: 3
+        });
+
+        var myDivIcon4 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank4-div-icon',
+          html: 4
+        });
+
+
+        var myDivIcon5 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank5-div-icon',
+          html: 5
+        });
+
+        var myDivIcon6 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank6-div-icon',
+          html: 6
+        });
+
+        var myDivIcon7 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank7-div-icon',
+          html: 7
+        });
+
+        var myDivIcon8 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank8-div-icon',
+          html: 8
+        });
+
+        var myDivIcon9 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank9-div-icon',
+          html: 9
+        });
+
+        var myDivIcon10 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank10-div-icon',
+          html: 10
+        });
+
+        var myDivIcon11 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank11-div-icon',
+          html: 11
+        });
+
+        var myDivIcon12 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank12-div-icon',
+          html: 12
+        });
+
+        var myDivIcon13 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank13-div-icon',
+          html: 13
+        });
+
+        var myDivIcon14 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank14-div-icon',
+          html: 14
+        });
+
+        var myDivIcon15 = L.divIcon({
+          iconSize: new L.Point(14, 14),
+          iconAnchor: new L.Point(8, 14),
+          className: 'rank15-div-icon',
+          html: 15
+        });
+
+        var myDivIcon16 = L.divIcon({
+          iconSize: new L.Point(12, 12),
+          iconAnchor: new L.Point(6, 12),
+          className: 'rankW-div-icon',
+          html: 'W',
+        });
+
+        var myDivIconN = L.divIcon({
+          iconSize: new L.Point(3, 3),
+          iconAnchor: new L.Point(1, 3),
+          className: 'rankN-div-icon',
+        });
+
+
+
+        function getIcon(d) {
+          return d > 16 ? myDivIconN :
+            d > 15 ? myDivIcon16 :
+            d > 14 ? myDivIcon15 :
+            d > 13 ? myDivIcon14 :
+            d > 12 ? myDivIcon13 :
+            d > 11 ? myDivIcon12 :
+            d > 10 ? myDivIcon11 :
+            d > 9 ? myDivIcon10 :
+            d > 8 ? myDivIcon9 :
+            d > 7 ? myDivIcon8 :
+            d > 6 ? myDivIcon7 :
+            d > 5 ? myDivIcon6 :
+            d > 4 ? myDivIcon5 :
+            d > 3 ? myDivIcon4 :
+            d > 2 ? myDivIcon3 :
+            d > 1 ? myDivIcon2 :
+            d > 0 ? myDivIcon1 :
+            myDivIconN;
+        }
+
+
+
+
+
+        var schoolFilter = function(feature) {
+          if (feature.properties.rankAvgb > 0) return true
+        }
+
+
+
+        var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+          filter: schoolFilter,
+          onEachFeature: forEachFeature_rank,
+          pointToLayer: function(feature, latlng) {
+            return L.marker(latlng, {
+              icon: getIcon(feature.properties.rank5b),
+              //icon: getIcon(2),
+            });
+          }
+        }).addTo(map);
 
 
 /*
-      var rankingMarkerOptions = {
-          radius: 18,
-          fillColor: getColor(10),
-          color: "#000",
-          weight: 1,
-          opacity: 1,
-          fillOpacity: 0.8
-      };
-
-      var districtMeets1 = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
-        onEachFeature: forEachFeature_district,
-        pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, districtMarkerOptions);
-        }
-      }).addTo(map);
+rankedSchools.getElement().style.border = '5px dotted lime';
+rankedSchools.getElement().style.width = '50px';
+rankedSchools.getElement().style.height = '50px';
 */
 
 
-//Create and Add District Meet locations
-        var districtDivIcon = L.divIcon({
-        iconSize: new L.Point(14, 12),
-        iconAnchor: new L.Point(7, 14),
-        className: 'districtMeet-div-icon',
-        html: "<i class='far fa-running'></i>"
-      });
 
-      var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
-        onEachFeature: forEachFeature_district,
-        pointToLayer: function(feature, latlng) {
-          return L.marker(latlng, {
-           icon: districtDivIcon,
-            //icon: getIcon(2),
-          });
+        //This draws a default teardrop for each school
+
+        var rankedSchoolsTeardrop = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+          onEachFeature: forEachFeature_district,
+          // pointToLayer: function (feature, latlng) {
+          //     return L.circleMarker(latlng, districtMarkerOptions);
+          // }
+        });
+
+
+
+
+        function getWeightedColor(d) {
+          d = parseFloat(d);
+          return d >= 20 ? '#fff' :
+            d > 17.5 ? 'WhiteSmoke' :
+            d > 15 ? 'LightGray' :
+            d > 10 ? 'yellow' :
+            d > 5 ? 'orange' :
+            d > 0 ? 'red' :
+            '#fff';
         }
-      }).addTo(map);
 
 
-
-
-
-
-
-
-
-      var myDivIcon1 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank1-div-icon',
-        html: 1
-      });
-
-      var myDivIcon2 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank2-div-icon',
-        html: 2
-      });
-
-      var myDivIcon3 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank3-div-icon',
-        html: 3
-      });
-
-      var myDivIcon4 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank4-div-icon',
-        html: 4
-      });
-
-
-      var myDivIcon5 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank5-div-icon',
-        html: 5
-      });
-
-      var myDivIcon6 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank6-div-icon',
-        html: 6
-      });
-
-      var myDivIcon7 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank7-div-icon',
-        html: 7
-      });
-
-      var myDivIcon8 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank8-div-icon',
-        html: 8
-      });
-
-      var myDivIcon9 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank9-div-icon',
-        html: 9
-      });
-
-      var myDivIcon10 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank10-div-icon',
-        html: 10
-      });
-
-      var myDivIcon11 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank11-div-icon',
-        html: 11
-      });
-
-      var myDivIcon12 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank12-div-icon',
-        html: 12
-      });
-
-      var myDivIcon13 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank13-div-icon',
-        html: 13
-      });
-
-      var myDivIcon14 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank14-div-icon',
-        html: 14
-      });
-
-      var myDivIcon15 = L.divIcon({
-        iconSize: new L.Point(14, 14),
-        iconAnchor: new L.Point(8, 14),
-        className: 'rank15-div-icon',
-        html: 15
-      });
-
-      var myDivIcon16 = L.divIcon({
-        iconSize: new L.Point(12, 12),
-        iconAnchor: new L.Point(6, 12),
-        className: 'rankW-div-icon',
-        html: 'W',
-      });
-
-	  var myDivIconN = L.divIcon({
-		iconSize: new L.Point(3, 3),
-		iconAnchor: new L.Point(1, 3),
-        className: 'rankN-div-icon',
-             });
-
-
-
-      function getIcon(d) {
-        return d > 16 ? myDivIconN :
-        d > 15 ? myDivIcon16 :
-          d > 14 ? myDivIcon15 :
-          d > 13 ? myDivIcon14 :
-          d > 12 ? myDivIcon13 :
-          d > 11 ? myDivIcon12 :
-          d > 10 ? myDivIcon11 :
-          d > 9 ? myDivIcon10 :
-          d > 8 ? myDivIcon9 :
-          d > 7 ? myDivIcon8 :
-          d > 6 ? myDivIcon7 :
-          d > 5 ? myDivIcon6 :
-          d > 4 ? myDivIcon5 :
-          d > 3 ? myDivIcon4 :
-          d > 2 ? myDivIcon3 :
-          d > 1 ? myDivIcon2 :
-          d > 0 ? myDivIcon1 :
-          myDivIconN;
-      }
-
-
-
-
-
-      var schoolFilter = function(feature) {
-        if (feature.properties.rankAvgb > 0) return true
-      }
-
-
-
-      var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
-        filter: schoolFilter,
-        onEachFeature: forEachFeature_rank,
-        pointToLayer: function(feature, latlng) {
-          return L.marker(latlng, {
-           icon: getIcon(feature.properties.rank5b),
-            //icon: getIcon(2),
-          });
+        var weightedRankFilter = function(feature) {
+          if (feature.properties.rankAvgb < 20) return true
         }
-      }).addTo(map);
+
+        var rankedSchoolsWeighted = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+          filter: weightedRankFilter,
+          onEachFeature: forEachFeature_rank,
+          pointToLayer: function(feature, latlng) {
+            return new L.circleMarker(latlng, {
+              radius: 5, //expressed in pixels
+              fillOpacity: 1.0,
+              fillColor: getWeightedColor(feature.properties.rankAvgb),
+              color: 'black',
+              weight: 1, //outline width
+              opacity: 1, //line opacity
+
+            });
+          }
+        });
 
 
 
 
-//This draws a default teardrop for each school
-
-      var rankedSchoolsTeardrop = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
-        onEachFeature: forEachFeature_district,
-        // pointToLayer: function (feature, latlng) {
-        //     return L.circleMarker(latlng, districtMarkerOptions);
-        // }
-      });
 
 
 
 
-      function getWeightedColor(d) {
-	      d = parseFloat(d);
-         return d >= 20 ? '#fff' :
-          d > 17.5 ? 'WhiteSmoke' :
-          d > 15 ? 'LightGray' :
-          d > 10 ? 'yellow' :
-          d > 5 ? 'orange' :
-          d > 0 ? 'red' :
-          '#fff';
-      }
+        /*
+        var allCounties = "https://raw.githubusercontent.com/ISUEOGTP/GeoJSON/master/US_Counties.json";
 
-
- var weightedRankFilter = function(feature) {
-        if (feature.properties.rankAvgb <20) return true
-      }
-
-      var rankedSchoolsWeighted = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
-        filter: weightedRankFilter,
-        onEachFeature: forEachFeature_rank,
-        pointToLayer: function(feature, latlng) {
-          return new L.circleMarker(latlng, {
-            radius: 5, //expressed in pixels
-            fillOpacity: 1.0,
-            fillColor: getWeightedColor(feature.properties.rankAvgb),
-			color: 'black',
-            weight: 1, //outline width
-            opacity: 1, //line opacity
-
-          });
+        //US_Counties.json
+        new L.GeoJSON.AJAX(allCounties, {
+        	filter: function(feature, layer) {
+        		if (feature.properties.STATE == 19) {
+        			return 'true'
+        		}
+        	}
         }
-      });
+        ).addTo(map);
+
+        */
 
 
+        //-----------------
+
+        /*
+
+        function refilterLayer(varState) {
+
+        // remove the layer if it exists - you'll have to look up how to do that
+
+           var geojsonLayer = L.geoJson(data, {
+            pointToLayer: function (feature, latlng) {
+              return L.circleMarker(latlng, {
+                radius: 5.0,
+                fillColor: '#e1118e',
+                color: '#000000',
+                weight: 1,
+                opacity: 1.0,
+                fillOpacity: 1.0
+                })
+              },
+              filter: function(feature, layer) {
+              if (varState == "01") {
+             return (feature.properties.field1 == "yes" &&   feature.properties.field2 == "yes");
+              }
+              else if (varState == "02") {
+                return (feature.properties.field1 == "yes" && feature.properties.field2 == "no");
+               }
+               else {
+                 return feature.properties.field1 == "yes";
+               }
+
+           }).addTo(map);
+
+         }
+
+        }
 
 
+        */
 
 
-
-
-      /*
-      var allCounties = "https://raw.githubusercontent.com/ISUEOGTP/GeoJSON/master/US_Counties.json";
-
-      //US_Counties.json
-      new L.GeoJSON.AJAX(allCounties, {
-      	filter: function(feature, layer) {
-      		if (feature.properties.STATE == 19) {
-      			return 'true'
-      		}
-      	}
-      }
-      ).addTo(map);
-
-      */
-
-
-      //-----------------
-
-      /*
-
-      function refilterLayer(varState) {
-
-      // remove the layer if it exists - you'll have to look up how to do that
-
-         var geojsonLayer = L.geoJson(data, {
-          pointToLayer: function (feature, latlng) {
-            return L.circleMarker(latlng, {
-              radius: 5.0,
-              fillColor: '#e1118e',
-              color: '#000000',
-              weight: 1,
-              opacity: 1.0,
-              fillOpacity: 1.0
-              })
-            },
-            filter: function(feature, layer) {
-            if (varState == "01") {
-           return (feature.properties.field1 == "yes" &&   feature.properties.field2 == "yes");
-            }
-            else if (varState == "02") {
-              return (feature.properties.field1 == "yes" && feature.properties.field2 == "no");
-             }
-             else {
-               return feature.properties.field1 == "yes";
-             }
-
-         }).addTo(map);
-
-       }
-
-      }
-
-
-      */
-
-
-      //layer control
-      var baseMaps = {
-        "OpenStreetMap": OSM,
-        "Stamen Toner": Stamen_Toner,
-        "ESRI Simple": Esri_WorldGrayCanvas,
-        "Carto Simple": CartoDB_Positron,
-        "ESRI Aerial": Esri_WorldImagery
+        //layer control
+        var baseMaps = {
+          "OpenStreetMap": OSM,
+          "Stamen Toner": Stamen_Toner,
+          "ESRI Simple": Esri_WorldGrayCanvas,
+          "Carto Simple": CartoDB_Positron,
+          "ESRI Aerial": Esri_WorldImagery
 
 
 
@@ -548,28 +591,29 @@ Class:<br>
 
 
 
-      };
+        };
 
-      var overlayMaps = {
-        "Radar": nexrad,
-        "District Sites": districtMeets,
-        "Schools": rankedSchools,
-        "Schools blue": rankedSchoolsTeardrop,
-        "Weighted Week Avg": rankedSchoolsWeighted
+        var overlayMaps = {
+          "Radar": nexrad,
+          "District Sites": districtMeets,
+          "Schools": rankedSchools,
+          "Schools blue": rankedSchoolsTeardrop,
+          "Weighted Week Avg": rankedSchoolsWeighted
 
-      };
+        };
 
-      L.control.layers(baseMaps, overlayMaps).addTo(map);
-
-
-
-      //map.fitBounds(rankedSchools .getBounds(), {padding: [2, 2]});
+        L.control.layers(baseMaps, overlayMaps).addTo(map);
 
 
-       }); //End jQuery On Document load
+
+        //map.fitBounds(rankedSchools .getBounds(), {padding: [2, 2]});
+
+
+      }); //End jQuery On Document load
 
     </script>
 
   </body>
 
 </html>
+
