@@ -137,20 +137,13 @@
         });
 
 
-
-
-
-
         function forEachFeature_district(feature, layer) {
           var popupContent = "<p> <b>" + feature.properties.location +
             "</b></br>Class: " + feature.properties.class + "</p>";
           layer.bindPopup(popupContent);
         }
 
-
-
         function forEachFeature_rank(feature, layer) {
-
 
 	      for (i = 0; i < 9; i++) {
 		      //var bar = feature.properties["rank" + i + "g"];
@@ -158,69 +151,7 @@
 
 		      if (feature.properties["rank" + i + "g"] == '21' || feature.properties["rank" + i + "g"] == '') { feature.properties["rank" + i + "g"] = "-"; }
 		      if (feature.properties["rank" + i + "b"] == '21' || feature.properties["rank" + i + "b"] == '') { feature.properties["rank" + i + "b"] = "-"; }
-
-		      }
-
-
-
-/*
-
-          if (feature.properties.rank0g == '20' || feature.properties.rank0g == '') {
-            feature.properties.rank0g = "-";
-          }
-          if (feature.properties.rank1g == '20' || feature.properties.rank1g == '') {
-            feature.properties.rank1g = "-";
-          }
-          if (feature.properties.rank2g == '20' || feature.properties.rank2g == '') {
-            feature.properties.rank2g = "-";
-          }
-          if (feature.properties.rank3g == '20' || feature.properties.rank3g == '') {
-            feature.properties.rank3g = "-";
-          }
-          if (feature.properties.rank4g == '20' || feature.properties.rank4g == '') {
-            feature.properties.rank4g = "-";
-          }
-          if (feature.properties.rank5g == '20' || feature.properties.rank5g == '') {
-            feature.properties.rank5g = "-";
-          }
-          if (feature.properties.rank6g == '20' || feature.properties.rank6g == '') {
-            feature.properties.rank6g = "-";
-          }
-          if (feature.properties.rank7g == '20' || feature.properties.rank7g == '') {
-            feature.properties.rank7g = "-";
-          }
-          if (feature.properties.rank8g == '20' || feature.properties.rank8g == '') {
-            feature.properties.rank8g = "-";
-          }
-
-          if (feature.properties.rank0b == '20' || feature.properties.rank0b == '') {
-            feature.properties.rank0b = "-";
-          }
-          if (feature.properties.rank1b == '20' || feature.properties.rank1b == '') {
-            feature.properties.rank1b = "-";
-          }
-          if (feature.properties.rank2b == '20' || feature.properties.rank2b == '') {
-            feature.properties.rank2b = "-";
-          }
-          if (feature.properties.rank3b == '20' || feature.properties.rank3b == '') {
-            feature.properties.rank3b = "-";
-          }
-          if (feature.properties.rank4b == '20' || feature.properties.rank4b == '') {
-            feature.properties.rank4b = "-";
-          }
-          if (feature.properties.rank5b == '20' || feature.properties.rank5b == '') {
-            feature.properties.rank5b = "-";
-          }
-          if (feature.properties.rank6b == '20' || feature.properties.rank6b == '') {
-            feature.properties.rank6b = "-";
-          }
-          if (feature.properties.rank7b == '20' || feature.properties.rank7b == '') {
-            feature.properties.rank7b = "-";
-          }
-          if (feature.properties.rank8b == '20' || feature.properties.rank8b == '') {
-            feature.properties.rank8b = "-";
-          }
-*/
+		  }
 
           var popupContent = "<strong>" + feature.properties.teamName + "</strong><br>" +
             "Enrollment: " + feature.properties.enrollment + ", Class: " + feature.properties.class + "<br>" +
@@ -235,12 +166,8 @@
             "<tr><td>7: </td><td>" + feature.properties.rank7g + "</td><td>" + feature.properties.rank7b + "</td></tr>" +
             "<tr><td>8: </td><td>" + feature.properties.rank8g + "</td><td>" + feature.properties.rank8b + "</td></tr>" +
             "</table>";
-          layer.bindPopup(popupContent);
+		layer.bindPopup(popupContent);
         }
-
-
-
-
 
 
 
@@ -258,9 +185,6 @@
 
 
         */
-
-
-
 
 
         /*
@@ -451,25 +375,65 @@
         }
 
 
+ var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+
+        })
 
 
 
-        var schoolFilter = function(feature) {
+$('input[type=radio][name=gender]').change(function() {
+
+
+ console.log(map.hasLayer(rankedSchools));
+
+  if(map.hasLayer(rankedSchools) == true) {
+
+
+
+	  //map.removeLayer(rankedSchools);
+  }
+
+  		gender = this.value
+
+
+
+geojsonLayer.refresh("https://profseeger.github.io/XC-rData/schoolRankings.geojson")
+
+
+          var schoolFilter = function(feature) {
           if (feature.properties.rankAvgb > 0) return true
         }
 
 
-
-        var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+        rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
           filter: schoolFilter,
           onEachFeature: forEachFeature_rank,
           pointToLayer: function(feature, latlng) {
             return L.marker(latlng, {
-              icon: getIcon(feature.properties.rank5b),
+              icon: getIcon(feature.properties['rank5'+gender]),
               //icon: getIcon(2),
             });
           }
         }).addTo(map);
+
+
+
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -515,7 +479,7 @@ rankedSchools.getElement().style.height = '50px';
             return new L.circleMarker(latlng, {
               radius: 5, //expressed in pixels
               fillOpacity: 1.0,
-              fillColor: getWeightedColor(feature.properties.rankAvgb),
+              fillColor: getWeightedColor(feature.properties['rankAvgb']),
               color: 'black',
               weight: 1, //outline width
               opacity: 1, //line opacity
@@ -523,10 +487,6 @@ rankedSchools.getElement().style.height = '50px';
             });
           }
         });
-
-
-
-
 
 
 
@@ -594,17 +554,7 @@ rankedSchools.getElement().style.height = '50px';
           "ESRI Simple": Esri_WorldGrayCanvas,
           "Carto Simple": CartoDB_Positron,
           "ESRI Aerial": Esri_WorldImagery
-
-
-
-
-
-
-
-
-
-
-        };
+		};
 
         var overlayMaps = {
           "Radar": nexrad,
