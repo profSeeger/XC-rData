@@ -5,7 +5,7 @@
       "type": "Feature",
       "properties": {
         "location": "Cedar Falls",
-        "class": "4A"
+        "class": "1A"
       },
       "geometry": {
         "type": "Point",
@@ -19,7 +19,7 @@
       "type": "Feature",
       "properties": {
         "location": "Marshalltown",
-        "class": "4A"
+        "class": "1A"
       },
       "geometry": {
         "type": "Point",
@@ -33,7 +33,7 @@
       "type": "Feature",
       "properties": {
         "location": "Mount Ayr",
-        "class": "4A"
+        "class": "1A"
       },
       "geometry": {
         "type": "Point",
@@ -47,7 +47,7 @@
       "type": "Feature",
       "properties": {
         "location": "Iowa City (Regina)",
-        "class": "4A"
+        "class": "1A"
       },
       "geometry": {
         "type": "Point",
@@ -61,7 +61,7 @@
       "type": "Feature",
       "properties": {
         "location": "Ridge View",
-        "class": "4A"
+        "class": "1A"
       },
       "geometry": {
         "type": "Point",
