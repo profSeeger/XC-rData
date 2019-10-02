@@ -23,7 +23,7 @@
     <script src="leafletLayers.js"></script>
 
 
-
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="css/rank-div.css" />
 
@@ -149,8 +149,21 @@
 
 
 
-
         function forEachFeature_rank(feature, layer) {
+
+
+	      for (i = 0; i < 9; i++) {
+		      //var bar = feature.properties["rank" + i + "g"];
+		      //console.log(bar);
+
+		      if (feature.properties["rank" + i + "g"] == '21' || feature.properties["rank" + i + "g"] == '') { feature.properties["rank" + i + "g"] = "-"; }
+		      if (feature.properties["rank" + i + "b"] == '21' || feature.properties["rank" + i + "b"] == '') { feature.properties["rank" + i + "b"] = "-"; }
+
+		      }
+
+
+
+/*
 
           if (feature.properties.rank0g == '20' || feature.properties.rank0g == '') {
             feature.properties.rank0g = "-";
@@ -207,7 +220,7 @@
           if (feature.properties.rank8b == '20' || feature.properties.rank8b == '') {
             feature.properties.rank8b = "-";
           }
-
+*/
 
           var popupContent = "<strong>" + feature.properties.teamName + "</strong><br>" +
             "Enrollment: " + feature.properties.enrollment + ", Class: " + feature.properties.class + "<br>" +
