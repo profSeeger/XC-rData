@@ -97,12 +97,30 @@
 
   <body>
     <div id="container_header">
+<strong>2019 Cross Country Rankings</strong><br>
+      Class: <input type="radio" name="class" value="1A" checked> 1A &nbsp
+      <input type="radio" name="class" value="2A"> 2A &nbsp
+      <input type="radio" name="class" value="3A"> 3A &nbsp
+      <input type="radio" name="class" value="1A"> 4A &nbsp
 
-      Select Rankings to Show:<br>
-      <input type="radio" name="gender" value="b" checked> Boys <span style="font-size: 12px; color: blue;"><i class="fas fa-running"></i></span><br>
-      <input type="radio" name="gender" value="g"> Girls <span style="font-size: 12px; color: red;"><i class="fas fa-running"></i></span><br>
-      Class:<br>
-      <input type="radio" name="class" value="1A"> 1A<br>
+      <br>
+      Varsity:
+      <input type="radio" name="gender" value="b" checked> Boys <span style="font-size: 12px; color: blue;"><i class="fas fa-running"></i></span> &nbsp
+      <input type="radio" name="gender" value="g"> Girls <span style="font-size: 12px; color: red;"><i class="fas fa-running"></i></span>
+      <br>
+      Week:
+      <input type="radio" name="weekRank" value="0"> pre &nbsp
+      <input type="radio" name="weekRank" value="1"> 1 &nbsp
+      <input type="radio" name="weekRank" value="2"> 2 &nbsp
+      <input type="radio" name="weekRank" value="3"> 3 &nbsp
+      <input type="radio" name="weekRank" value="4"> 4 &nbsp
+      <input type="radio" name="weekRank" value="5" checked> 5 &nbsp
+      <input type="radio" name="weekRank" value="6"> 6 &nbsp
+      <input type="radio" name="weekRank" value="7"> 7 &nbsp
+      <input type="radio" name="weekRank" value="8"> 8 &nbsp
+      <input type="radio" name="weekRank" value="9"> State Qualifiers
+      <br>
+
 
 
     </div>
@@ -223,10 +241,6 @@
             });
           }
         }).addTo(map);
-
-
-
-
 
 
 
@@ -374,60 +388,43 @@
             myDivIconN;
         }
 
+var rankedSchools = new L.GeoJSON();
 
- var rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+//$('input:radio[name="gender"]').filter('[value="b"]').attr('checked', true);
 
-        })
+//$('input[type=radio][name=gender]').change(function() {
+$('input[type=radio]').change(function() {
+	map.removeLayer(rankedSchools);
+	map.removeLayer(districtMeets);
+	map.addLayer(districtMeets);
 
+  		gender = $("input[name='gender']:checked"). val();
+  		weekRank = $("input[name='weekRank']:checked"). val();
 
-
-$('input[type=radio][name=gender]').change(function() {
-
-
- console.log(map.hasLayer(rankedSchools));
-
-  if(map.hasLayer(rankedSchools) == true) {
-
-
-
-	  //map.removeLayer(rankedSchools);
-  }
-
-  		gender = this.value
-
-
-
-geojsonLayer.refresh("https://profseeger.github.io/XC-rData/schoolRankings.geojson")
-
-
-          var schoolFilter = function(feature) {
+       var schoolFilter = function(feature) {
           if (feature.properties.rankAvgb > 0) return true
         }
-
 
         rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
           filter: schoolFilter,
           onEachFeature: forEachFeature_rank,
           pointToLayer: function(feature, latlng) {
             return L.marker(latlng, {
-              icon: getIcon(feature.properties['rank5'+gender]),
+              icon: getIcon(feature.properties['rank'+ weekRank + gender]),
               //icon: getIcon(2),
             });
           }
         }).addTo(map);
 
 
-
-
+       // rankedSchools.setZIndex(15);
 
 
 
 });
 
 
-
-
-
+$('input:radio[name="gender"]:checked').change();
 
 
 
@@ -483,7 +480,6 @@ rankedSchools.getElement().style.height = '50px';
               color: 'black',
               weight: 1, //outline width
               opacity: 1, //line opacity
-
             });
           }
         });
