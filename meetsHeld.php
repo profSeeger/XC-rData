@@ -17,27 +17,43 @@ $table = 'XC_meetDates';
 
 
 
-$a=array();
+$dailyMeets=array();
+
+
+$arrayPosition = 0;
+
+
+for ($startingWeek  = 41; $startingWeek < 42; $startingWeek++) {
+	for ($startingDay  = 1; $startingDay  <= 7; $startingDay++) {
+		$sql = "SELECT *, COUNT(meet) AS meets FROM $table GROUP BY date WHERE week = $startingWeek AND day = $startingDay";
+		//print $sql."<br>";
+
+
+		$result = $mysqli->query($sql);
+		if ($result->num_rows > 0) {
+		    // output data of each row
+		    while($row = $result->fetch_assoc()) {
+			    $name = $row["year"];
+			    $date = $row["date"];
+			    $meets = $row["meets"];
+			    $week = $row["week"];
+			    $day = $row["day"];
+			     //print $name."<br>";
+			     print $date." ".$meets."<br>";
+			     $dailyMeets[$arrayPosition] = $meets;
+		    }
+		}else{
+			$dailyMeets[$arrayPosition] = 0;
+		}
+		print $dailyMeets[$arrayPosition]."<br>";
+		$arrayPosition++;
+	}
+};
 
 
 
-$sql = "SELECT * FROM $table ORDER BY date DESC";
 
-$result = $mysqli->query($sql);
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-	    $name = $row["year"];
-	    $date = $row["date"];
-	    $x = $row["status"];
-	     //print $name."<br>";
-	     //print $date."<br>";
-	     array_push($a, $x);
-    }
 
-//print_r($a);
-print $a[3];
-}
 
 $mysqli->close();
 
