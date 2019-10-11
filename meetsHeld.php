@@ -14,18 +14,29 @@ if ($mysqli->connect_error) {
 $table = 'XC_meetDates';
 
 
-$sql = "SELECT * FROM $table";
 
+
+
+$a=array();
+
+
+
+$sql = "SELECT * FROM $table ORDER BY date DESC";
 
 $result = $mysqli->query($sql);
-
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
 	    $name = $row["year"];
+	    $date = $row["date"];
+	    $x = $row["status"];
 	     //print $name."<br>";
+	     //print $date."<br>";
+	     array_push($a, $x);
     }
 
+//print_r($a);
+print $a[3];
 }
 
 $mysqli->close();
