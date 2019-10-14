@@ -114,8 +114,8 @@
       <input type="radio" name="weekRank" value="2"> 2 &nbsp;
       <input type="radio" name="weekRank" value="3"> 3 &nbsp;
       <input type="radio" name="weekRank" value="4"> 4 &nbsp;
-      <input type="radio" name="weekRank" value="5" checked> 5 &nbsp;
-      <input type="radio" name="weekRank" value="6"> 6 &nbsp;
+      <input type="radio" name="weekRank" value="5"> 5 &nbsp;
+      <input type="radio" name="weekRank" value="6" checked> 6 &nbsp;
       <input type="radio" name="weekRank" value="7"> 7 &nbsp;
       <input type="radio" name="weekRank" value="8"> 8 &nbsp;
       <input type="radio" name="weekRank" value="9"> State Qualifiers
@@ -197,9 +197,9 @@ function getDistrictCoords(d) {
 
 			//draw lines to district location
 
-			if (feature.properties.teamName == "Ogden") {
+			if (feature.properties.district != "---") {
 
-				districtCoords = getDistrictCoords("Marshalltown");
+				districtCoords = getDistrictCoords(feature.properties.district);
 				districtLoc = districtCoords.split(",")
 				districtLat = districtLoc[0];
 				districtLong = districtLoc[1];
@@ -212,8 +212,8 @@ function getDistrictCoords(d) {
 
 				var firstpolyline = new L.Polyline(pointList, {
 					color: 'red',
-					weight: 2,
-					opacity: 0.5,
+					weight: 1,
+					opacity: 0.25,
 					smoothFactor: 1
 					});
 				firstpolyline.addTo(map);
