@@ -135,9 +135,6 @@
       $(document).ready(function() {
 
 
-
-
-
         /*
         var sidewalks = L.tileLayer("https://api.mapbox.com/styles/v1/prof-cjseeger/ck0ihf7664fyu1co605s4ukub/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicHJvZi1janNlZWdlciIsImEiOiJjaXQ1emQwc2QwMjI4MnBxMDRpbnozcG52In0.Ms24ScMgfKOKgLj0zuQqcw", {
         	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
@@ -154,54 +151,14 @@
 
 
 
-  function getDistrictLat(d) {
-          return d == 'Cedar Falls' ? '42.53' :
-            d == 'Marshalltown' ? '42.001' :
-            '45.0';
-       }
-
-  function getDistrictLong(d) {
-          return d == 'Cedar Falls' ? '-92.487' :
-            d == 'Marshalltown' ? '-92.905' :
-         '-97.0';
-        }
-
-
-
-          function getDistrictLoc(d) {
-          return d == 'Cedar Falls' ? '42.53, -92.487' :
-            d == 'Marshalltown' ? '42.001, -92.905' :
-         '42.001, -92.905';
-        }
-
-
-/*
-        "location": "Cedar Falls",
-          -92.487,
-          42.53
-
-        "location": "Marshalltown",
-          -92.905,
-          42.001
-
-        "location": "Mount Ayr",
-          -94.226,
-          40.705
-
-        "location": "Iowa City (Regina)",
-          -91.504,
-          41.668
-
-        "location": "Ridge View",
-          -95.537,
-          42.48
-  */
-
-
-
-
-
-
+function getDistrictCoords(d) {
+	return d == "Cedar Falls" ? '42.53, -92.487' :
+		d == "Marshalltown" ? '42.001, -92.905' :
+		d == "Mount Ayr" ? '40.705, -94.226' :
+		d == "Iowa City (Regina)" ? '41.668, -91.504' :
+		d == "Ridge View" ? '42.48, -95.537' :
+	'47, -98.0';
+}
 
 
 
@@ -242,21 +199,20 @@
 
 			if (feature.properties.teamName == "Ogden") {
 
-				districtLat = getDistrictLat(feature.properties.teamName);
-				districtLong = getDistrictLong(feature.properties.teamName);
-
-				//districtLat = 42.984461;
-
-				//districtLong = -93.70641;
+				districtCoords = getDistrictCoords("Marshalltown");
+				districtLoc = districtCoords.split(",")
+				districtLat = districtLoc[0];
+				districtLong = districtLoc[1];
 
 				var pointA = new L.LatLng(feature.geometry.coordinates[1],feature.geometry.coordinates[0]);
-				//var pointB = new L.LatLng(districtLat, districtLong);
-				var pointB = new L.LatLng(getDistrictLoc(feature.properties.teamName));
+
+				var pointB = new L.LatLng(districtLat, districtLong);
+				//var pointB = new L.LatLng(getDistrictLoc('Ridge View'));
 				var pointList = [pointA, pointB];
 
 				var firstpolyline = new L.Polyline(pointList, {
 					color: 'red',
-					weight: 3,
+					weight: 2,
 					opacity: 0.5,
 					smoothFactor: 1
 					});
