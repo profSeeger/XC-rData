@@ -153,6 +153,59 @@
         });
 
 
+
+  function getDistrictLat(d) {
+          return d == 'Cedar Falls' ? '42.53' :
+            d == 'Marshalltown' ? '42.001' :
+            '45.0';
+       }
+
+  function getDistrictLong(d) {
+          return d == 'Cedar Falls' ? '-92.487' :
+            d == 'Marshalltown' ? '-92.905' :
+         '-97.0';
+        }
+
+
+
+          function getDistrictLoc(d) {
+          return d == 'Cedar Falls' ? '42.53, -92.487' :
+            d == 'Marshalltown' ? '42.001, -92.905' :
+         '42.001, -92.905';
+        }
+
+
+/*
+        "location": "Cedar Falls",
+          -92.487,
+          42.53
+
+        "location": "Marshalltown",
+          -92.905,
+          42.001
+
+        "location": "Mount Ayr",
+          -94.226,
+          40.705
+
+        "location": "Iowa City (Regina)",
+          -91.504,
+          41.668
+
+        "location": "Ridge View",
+          -95.537,
+          42.48
+  */
+
+
+
+
+
+
+
+
+
+
         function forEachFeature_district(feature, layer) {
           var popupContent = "<p> <b>" + feature.properties.location +
             "</b></br>Class: " + feature.properties.class + "</p>";
@@ -187,19 +240,32 @@
 
 			//draw lines to district location
 
-			if (feature.properties.teamName == "Ogden")
-				var pointA = new L.LatLng(42.635308, -93.22496);
-				var pointB = new L.LatLng(28.984461, 77.70641);
+			if (feature.properties.teamName == "Ogden") {
+
+				districtLat = getDistrictLat(feature.properties.teamName);
+				districtLong = getDistrictLong(feature.properties.teamName);
+
+				//districtLat = 42.984461;
+
+				//districtLong = -93.70641;
+
+				var pointA = new L.LatLng(feature.geometry.coordinates[1],feature.geometry.coordinates[0]);
+				//var pointB = new L.LatLng(districtLat, districtLong);
+				var pointB = new L.LatLng(getDistrictLoc(feature.properties.teamName));
 				var pointList = [pointA, pointB];
 
 				var firstpolyline = new L.Polyline(pointList, {
 					color: 'red',
 					weight: 3,
-					opacity: 0.15,
+					opacity: 0.5,
 					smoothFactor: 1
 					});
 				firstpolyline.addTo(map);
+			}
         }
+
+
+
 
 
 
