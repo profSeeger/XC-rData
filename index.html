@@ -99,9 +99,11 @@
     <div id="container_header">
 <strong>2019 Cross Country Rankings</strong><br>
       Class: <input type="radio" name="class" value="1A" checked> 1A &nbsp;
+      <!--
       <input type="radio" name="class" value="2A"> 2A &nbsp;
       <input type="radio" name="class" value="3A"> 3A &nbsp;
       <input type="radio" name="class" value="1A"> 4A &nbsp;
+      -->
 
       <br>
       Varsity:
@@ -160,6 +162,35 @@ function getDistrictCoords(d) {
 	'47, -98.0';
 }
 
+function getDistrictLineColor(g,b) {
+	console.log(g+", "+b);
+	if (parseFloat(g) < 16 && parseFloat(b) < 16) {
+		return 'black';
+	}else if (parseFloat(g) < 16) {
+		return 'red';
+	}else if (parseFloat(b) < 16) {
+		return 'blue';
+	}else{
+		return 'grey';
+	}
+
+
+	/*
+	return d > 37 ? 'grey' : //without team on watch list or better 16+21
+		d >17  ? 'blue' :  //at least one team has to be ranked or on watch
+		d >1  ? 'black' :
+		'orange';
+	*/
+}
+
+function getDistrictLineWeight(d) {
+	//console.log(d)
+	return d > 37 ? 1 : //without team on watch list or better 16+21
+		d >17  ? 2 :  //at least one team has to be ranked or on watch
+		d >1  ? 3 :
+		5;
+}
+
 
 
 
@@ -171,10 +202,42 @@ function getDistrictCoords(d) {
 
         function forEachFeature_rank(feature, layer) {
 
+//draw lines to district location
+
+			if (feature.properties.district != "---") {
+
+				districtCoords = getDistrictCoords(feature.properties.district);
+				districtLoc = districtCoords.split(",")
+				districtLat = districtLoc[0];
+				districtLong = districtLoc[1];
+
+				var pointA = new L.LatLng(feature.geometry.coordinates[1],feature.geometry.coordinates[0]);
+
+				var pointB = new L.LatLng(districtLat, districtLong);
+				//var pointB = new L.LatLng(getDistrictLoc('Ridge View'));
+				var pointList = [pointA, pointB];
+
+				var firstpolyline = new L.Polyline(pointList, {
+					color: getDistrictLineColor(feature.properties.rank6g, feature.properties.rank6b),
+					weight: getDistrictLineWeight(feature.properties.rank6g + feature.properties.rank6b),
+					opacity: 1.0,
+					smoothFactor: 1
+					});
+				firstpolyline.addTo(map);
+			}
+
+
+
+
+
+
+
+
+
+//create popup table
 	      for (i = 0; i < 9; i++) {
 		      //var bar = feature.properties["rank" + i + "g"];
 		      //console.log(bar);
-
 		      if (feature.properties["rank" + i + "g"] == '21' || feature.properties["rank" + i + "g"] == '') { feature.properties["rank" + i + "g"] = "-"; }
 		      if (feature.properties["rank" + i + "b"] == '21' || feature.properties["rank" + i + "b"] == '') { feature.properties["rank" + i + "b"] = "-"; }
 		  }
@@ -195,30 +258,7 @@ function getDistrictCoords(d) {
 
 			layer.bindPopup(popupContent);
 
-			//draw lines to district location
-
-			if (feature.properties.district != "---") {
-
-				districtCoords = getDistrictCoords(feature.properties.district);
-				districtLoc = districtCoords.split(",")
-				districtLat = districtLoc[0];
-				districtLong = districtLoc[1];
-
-				var pointA = new L.LatLng(feature.geometry.coordinates[1],feature.geometry.coordinates[0]);
-
-				var pointB = new L.LatLng(districtLat, districtLong);
-				//var pointB = new L.LatLng(getDistrictLoc('Ridge View'));
-				var pointList = [pointA, pointB];
-
-				var firstpolyline = new L.Polyline(pointList, {
-					color: 'red',
-					weight: 1,
-					opacity: 0.25,
-					smoothFactor: 1
-					});
-				firstpolyline.addTo(map);
-			}
-        }
+			        }
 
 
 
