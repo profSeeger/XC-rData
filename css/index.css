@@ -1,0 +1,57 @@
+html,
+      body,
+      #map {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: 1px solid #000;
+      }
+
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 1px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+
+      #container {
+        height: 100%;
+        background-color: yellow;
+      }
+
+      #container_header {
+        position: absolute;
+        top: 0px;
+        height: 150px;
+        width: 100%;
+        background-color: white;
+        margin: 10px;
+      }
+
+      #container_main {
+        position: absolute;
+        top: 150px;
+        /* Header Height */
+        bottom: 10px;
+        /* Footer Height */
+        width: 100%;
+      }
+
+      #container_footer {
+        position: absolute;
+        bottom: 0px;
+        /* Header Height */
+        height: 10px;
+        background-color: green;
+        width: 100%;
+      }

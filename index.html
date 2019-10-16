@@ -19,85 +19,20 @@
 
 
     <script src="classes/leaflet.ajax.js"></script>
-
     <script src="leafletLayers.js"></script>
 
 
-<link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 
     <link rel="stylesheet" href="css/rank-div.css" />
-
-
-    <style>
-      html,
-      body,
-      #map {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        border: 1px solid #000;
-      }
-
-      table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-      }
-
-      td,
-      th {
-        border: 1px solid #dddddd;
-        text-align: center;
-        padding: 1px;
-      }
-
-      tr:nth-child(even) {
-        background-color: #dddddd;
-      }
-
-      #container {
-        height: 100%;
-        background-color: yellow;
-      }
-
-      #container_header {
-        position: absolute;
-        top: 0px;
-        height: 100px;
-        width: 100%;
-        background-color: white;
-        margin: 10px;
-      }
-
-      #container_main {
-        position: absolute;
-        top: 100px;
-        /* Header Height */
-        bottom: 10px;
-        /* Footer Height */
-        width: 100%;
-      }
-
-      #container_footer {
-        position: absolute;
-        bottom: 0px;
-        /* Header Height */
-        height: 10px;
-        background-color: green;
-        width: 100%;
-      }
-
-    </style>
-
-
-
+	<link rel="stylesheet" href="css/index.css" />
 
 
   </head>
 
   <body>
     <div id="container_header">
-<strong>2019 Cross Country Rankings</strong><br>
+      <strong>2019 Cross Country Rankings</strong><br>
       Class: <input type="radio" name="class" value="1A" checked> 1A &nbsp;
       <!--
       <input type="radio" name="class" value="2A"> 2A &nbsp;
@@ -122,6 +57,12 @@
       <input type="radio" name="weekRank" value="8"> 8 &nbsp;
       <input type="radio" name="weekRank" value="9"> State Qualifiers
       <br>
+      Rank Avg:
+      <input type="radio" name="weekRank" value="10"> 3-Week &nbsp;
+      <input type="radio" name="weekRank" value="11"> All &nbsp;
+
+      <br>
+      Show District [spider] Assignments: <input type="checkbox" id="districtAssignments">
 
 
 
@@ -135,6 +76,25 @@
 
     <script>
       $(document).ready(function() {
+
+var json = (function () {
+    var json = null;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': 'schoolRankings.geojson',
+        'dataType': "json",
+        'success': function (data) {
+            json = data;
+        }
+    });
+    return json;
+})();
+
+
+
+
+
 
 
         /*
@@ -151,79 +111,62 @@
           layers: [Esri_WorldGrayCanvas]
         });
 
-
-
-function getDistrictCoords(d) {
-	return d == "Cedar Falls" ? '42.53, -92.487' :
-		d == "Marshalltown" ? '42.001, -92.905' :
-		d == "Mount Ayr" ? '40.705, -94.226' :
-		d == "Iowa City (Regina)" ? '41.668, -91.504' :
-		d == "Ridge View" ? '42.48, -95.537' :
-	'47, -98.0';
-}
-
-function getDistrictLineColor(g,b) {
-	console.log(g+", "+b);
-	if (parseFloat(g) < 16 && parseFloat(b) < 16) {
-		return 'black';
-	}else if (parseFloat(g) < 16) {
-		return 'red';
-	}else if (parseFloat(b) < 16) {
-		return 'blue';
-	}else{
-		return 'grey';
-	}
-
-
-	/*
-	return d > 37 ? 'grey' : //without team on watch list or better 16+21
-		d >17  ? 'blue' :  //at least one team has to be ranked or on watch
-		d >1  ? 'black' :
-		'orange';
-	*/
-}
-
-function getDistrictLineWeight(d) {
-	//console.log(d)
-	return d > 37 ? 1 : //without team on watch list or better 16+21
-		d >17  ? 2 :  //at least one team has to be ranked or on watch
-		d >1  ? 3 :
-		5;
-}
+        var districtPolylines = L.layerGroup();
 
 
 
 
+//Spiderline Style info
+        function getDistrictCoords(d) {
+          return d == "Cedar Falls" ? '42.53, -92.487' :
+            d == "Marshalltown" ? '42.001, -92.905' :
+            d == "Mount Ayr" ? '40.705, -94.226' :
+            d == "Iowa City (Regina)" ? '41.668, -91.504' :
+            d == "Ridge View" ? '42.48, -95.537' :
+            '47, -98.0';
+        }
+        function getDistrictLineColor(g, b) {
+          //console.log(g+", "+b);
+          if (parseFloat(g) < 16 && parseFloat(b) < 16) {
+            return 'black';
+          } else if (parseFloat(g) < 16) {
+            return 'red';
+          } else if (parseFloat(b) < 16) {
+            return 'blue';
+          } else {
+            return 'grey';
+          }
+        }
+        function getDistrictLineWeight(d) {
+          //console.log(d)
+          return d > 37 ? 1 : //without team on watch list or better 16+21
+            d > 17 ? 2 : //at least one team has to be ranked or on watch
+            d > 1 ? 3 :
+            5;
+        }
+//End Spiderline Style info
+
+
+
+//For Each District item
         function forEachFeature_district(feature, layer) {
+
+	       //  console.log(json);
+
+
           var popupContent = "<p> <b>" + feature.properties.location +
             "</b></br>Class: " + feature.properties.class + "</p>";
-          layer.bindPopup(popupContent);
-        }
 
-        function forEachFeature_rank(feature, layer) {
 
-//draw lines to district location
 
-			if (feature.properties.district != "---") {
+			  var as=$(json).filter(function (i,n){
+				 // console.log(n)
+				 return n.feature.properties.location===feature.properties.location;
+			 });
 
-				districtCoords = getDistrictCoords(feature.properties.district);
-				districtLoc = districtCoords.split(",")
-				districtLat = districtLoc[0];
-				districtLong = districtLoc[1];
-
-				var pointA = new L.LatLng(feature.geometry.coordinates[1],feature.geometry.coordinates[0]);
-
-				var pointB = new L.LatLng(districtLat, districtLong);
-				//var pointB = new L.LatLng(getDistrictLoc('Ridge View'));
-				var pointList = [pointA, pointB];
-
-				var firstpolyline = new L.Polyline(pointList, {
-					color: getDistrictLineColor(feature.properties.rank6g, feature.properties.rank6b),
-					weight: getDistrictLineWeight(feature.properties.rank6g + feature.properties.rank6b),
-					opacity: 1.0,
-					smoothFactor: 1
-					});
-				//firstpolyline.addTo(map);
+			for (var i=0;i<as.length;i++)
+			  {
+			   // console.log(i+1);
 			}
 
 
@@ -231,16 +174,51 @@ function getDistrictLineWeight(d) {
 
 
 
+          layer.bindPopup(popupContent);
+        }
+//End For Each District item
 
 
 
-//create popup table
-	      for (i = 0; i < 9; i++) {
-		      //var bar = feature.properties["rank" + i + "g"];
-		      //console.log(bar);
-		      if (feature.properties["rank" + i + "g"] == '21' || feature.properties["rank" + i + "g"] == '') { feature.properties["rank" + i + "g"] = "-"; }
-		      if (feature.properties["rank" + i + "b"] == '21' || feature.properties["rank" + i + "b"] == '') { feature.properties["rank" + i + "b"] = "-"; }
-		  }
+//For Each Ranking item
+        function forEachFeature_rank(feature, layer) {
+
+          //draw lines to district location - if not set then data has a --- placeholder
+          if (feature.properties.district != "---") {
+            districtCoords = getDistrictCoords(feature.properties.district);
+            districtLoc = districtCoords.split(",")
+            districtLat = districtLoc[0];
+            districtLong = districtLoc[1];
+
+            var pointA = new L.LatLng(feature.geometry.coordinates[1], feature.geometry.coordinates[0]);
+
+            var pointB = new L.LatLng(districtLat, districtLong);
+            var pointList = [pointA, pointB];
+
+            var districtPolyline = new L.Polyline(pointList, {
+              color: getDistrictLineColor(feature.properties.rank6g, feature.properties.rank6b),
+              weight: getDistrictLineWeight(feature.properties.rank6g + feature.properties.rank6b),
+              opacity: 1.0,
+              smoothFactor: 1
+            });
+            districtPolyline.addTo(districtPolylines); //add to layer group
+          }
+
+    //create table of rankings to date for school popup
+          //replace all non ranked with a dash -
+          for (i = 0; i < 9; i++) {
+            if (feature.properties["rank" + i + "g"] == '21' || feature.properties["rank" + i + "g"] == '') {
+              feature.properties["rank" + i + "g"] = "-";
+            }
+            if (feature.properties["rank" + i + "b"] == '21' || feature.properties["rank" + i + "b"] == '') {
+              feature.properties["rank" + i + "b"] = "-";
+            }
+          }
+          if (parseInt(feature.properties["rankLast3g"]) >= 21) {feature.properties["rankLast3g"] = "-"};
+          if (parseInt(feature.properties["rankLast3b"]) >= 21) {feature.properties["rankLast3b"] = "-"};
+          if (parseInt(feature.properties["rankAvgg"]) >= 21) {feature.properties["rankAvgg"] = "-"};
+          if (parseInt(feature.properties["rankAvgb"]) >= 21) {feature.properties["rankAvgb"] = "-"};
+
 
           var popupContent = "<strong>" + feature.properties.teamName + "</strong><br>" +
             "Enrollment: " + feature.properties.enrollment + ", Class: " + feature.properties.class + "<br>" +
@@ -254,12 +232,12 @@ function getDistrictLineWeight(d) {
             "<tr><td>6: </td><td>" + feature.properties.rank6g + "</td><td>" + feature.properties.rank6b + "</td></tr>" +
             "<tr><td>7: </td><td>" + feature.properties.rank7g + "</td><td>" + feature.properties.rank7b + "</td></tr>" +
             "<tr><td>8: </td><td>" + feature.properties.rank8g + "</td><td>" + feature.properties.rank8b + "</td></tr>" +
+            "<tr><td>Avg-3: </td><td>" + feature.properties.rankLast3g + "</td><td>" + feature.properties.rankLast3b + "</td></tr>" +
+             "<tr><td>Avg: </td><td>" + feature.properties.rankAvgg + "</td><td>" + feature.properties.rankAvgb + "</td></tr>" +
             "</table>";
-
-			layer.bindPopup(popupContent);
-
-			        }
-
+          layer.bindPopup(popupContent);
+        }
+//End For Each Ranking item
 
 
 
@@ -267,57 +245,42 @@ function getDistrictLineWeight(d) {
 
 
 
-        /*
-        var districtMarkerOptions = {
-            radius: 5,
-            fillColor: "blue",
-            color: "#000",
-            weight: 1,
-            opacity: 1,
-            fillOpacity: 0.8
-        };
 
-
-        */
-
-
-        /*
-              var rankingMarkerOptions = {
-                  radius: 18,
-                  fillColor: getColor(10),
-                  color: "#000",
-                  weight: 1,
-                  opacity: 1,
-                  fillOpacity: 0.8
-              };
-
-              var districtMeets1 = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
-                onEachFeature: forEachFeature_district,
-                pointToLayer: function (feature, latlng) {
-                    return L.circleMarker(latlng, districtMarkerOptions);
-                }
-              }).addTo(map);
-        */
-
-
-        //Create and Add District Meet locations
-        var districtDivIcon = L.divIcon({
-          iconSize: new L.Point(14, 12),
-          iconAnchor: new L.Point(7, 14),
-          className: 'districtMeet-div-icon',
-          html: "<i class='far fa-running'></i>"
-        });
 
         var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
-          onEachFeature: forEachFeature_district,
-          pointToLayer: function(feature, latlng) {
-            return L.marker(latlng, {
-              icon: districtDivIcon,
-              //icon: getIcon(2),
-            });
-          }
-        }).addTo(map);
+            onEachFeature: forEachFeature_district,
+            pointToLayer: function (feature, latlng) {
+                return new L.circleMarker(latlng, {
+					radius: 5, //expressed in pixels
+					fillOpacity: 0.5,
+					fillColor: 'yellow',
+					color: 'black',
+					weight: 1, //outline width
+					opacity: 0.5, //line opacity
+                });
+            }
+      	}).addTo(map);
 
+
+	//Alternatively, a Div marker could be used for the district site.
+		/*
+		    //Create and Add District Meet locations
+		    var districtDivIcon = L.divIcon({
+		      iconSize: new L.Point(14, 12),
+		      iconAnchor: new L.Point(7, 14),
+		      className: 'districtMeet-div-icon',
+		      html: "<i class='far fa-running'></i>"
+		    });
+
+		    var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
+		      onEachFeature: forEachFeature_district,
+		      pointToLayer: function(feature, latlng) {
+		        return L.marker(latlng, {
+		          icon: districtDivIcon,
+		        });
+		      }
+		    })
+		*/
 
 
 
@@ -464,43 +427,22 @@ function getDistrictLineWeight(d) {
             myDivIconN;
         }
 
-var rankedSchools = new L.GeoJSON();
+        var rankedSchools = new L.GeoJSON();
 
-//$('input:radio[name="gender"]').filter('[value="b"]').attr('checked', true);
+        //$('input:radio[name="gender"]').filter('[value="b"]').attr('checked', true);
 
-//$('input[type=radio][name=gender]').change(function() {
-$('input[type=radio]').change(function() {
-	map.removeLayer(rankedSchools);
-	map.removeLayer(districtMeets);
-	map.addLayer(districtMeets);
+        //$('input[type=radio][name=gender]').change(function() {
+        $('input[type=radio]').change(function() {
+          map.removeLayer(rankedSchools);
+          map.removeLayer(districtMeets);
+          map.addLayer(districtMeets);
 
-  		gender = $("input[name='gender']:checked"). val();
-  		weekRank = $("input[name='weekRank']:checked"). val();
+          gender = $("input[name='gender']:checked").val();
+          weekRank = $("input[name='weekRank']:checked").val();
 
-       var schoolFilter = function(feature) {
-          if (feature.properties.rankAvgb > 0) return true
-        }
-
-        rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
-          filter: schoolFilter,
-          onEachFeature: forEachFeature_rank,
-          pointToLayer: function(feature, latlng) {
-            return L.marker(latlng, {
-              icon: getIcon(feature.properties['rank'+ weekRank + gender]),
-              //icon: getIcon(2),
-            });
+          var schoolFilter = function(feature) {
+            if (feature.properties.rankAvgb > 0) return true
           }
-        }).addTo(map);
-
-
-       // rankedSchools.setZIndex(15);
-
-
-
-});
-
-
-$('input:radio[name="gender"]:checked').change();
 
 
 
@@ -508,12 +450,60 @@ $('input:radio[name="gender"]:checked').change();
 
 
 
+          rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+            filter: schoolFilter,
+            onEachFeature: forEachFeature_rank,
+            pointToLayer: function(feature, latlng) {
+	          if (weekRank < 10) {
+              	return L.marker(latlng, {
+               	 icon: getIcon(feature.properties['rank' + weekRank + gender]),
+              	});
+              }else if (weekRank == 10) {
+			  	pi3 = (22 - feature.properties['rankLast3' + gender])/22 ;
+            	return new L.circleMarker(latlng, {
+					radius: 3, //expressed in pixels
+					fillOpacity: pi3,
+					fillColor: 'red',
+					color: 'black',
+					weight: 0, //outline width
+					opacity: 1.0, //line opacity
+            	});
+              }else if (weekRank == 11) {
+			  	pi3 = (22 - feature.properties['rankAvg' + gender])/22 ;
+            	return new L.circleMarker(latlng, {
+					radius: 3, //expressed in pixels
+					fillOpacity: pi3,
+					fillColor: 'red',
+					color: 'black',
+					weight: 0, //outline width
+					opacity: 1.0, //line opacity
+            	});
+	          }
+            }
+          }).addTo(map);
+          // rankedSchools.setZIndex(15);
+        });
 
-/*
-rankedSchools.getElement().style.border = '5px dotted lime';
-rankedSchools.getElement().style.width = '50px';
-rankedSchools.getElement().style.height = '50px';
-*/
+        $('input:radio[name="gender"]:checked').change();
+
+
+        $('#districtAssignments').change(function() {
+          if (this.checked) {
+            districtPolylines.addTo(map)
+          } else {
+            map.removeLayer(districtPolylines)
+          }
+
+
+
+        })
+
+
+        /*
+        rankedSchools.getElement().style.border = '5px dotted lime';
+        rankedSchools.getElement().style.width = '50px';
+        rankedSchools.getElement().style.height = '50px';
+        */
 
 
 
@@ -542,7 +532,7 @@ rankedSchools.getElement().style.height = '50px';
 
 
         var weightedRankFilter = function(feature) {
-          if (feature.properties.rankAvgb < 20) return true
+          if (feature.properties.rankAvgb < 21) return true
         }
 
         var rankedSchoolsWeighted = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
@@ -559,6 +549,20 @@ rankedSchools.getElement().style.height = '50px';
             });
           }
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -626,7 +630,7 @@ rankedSchools.getElement().style.height = '50px';
           "ESRI Simple": Esri_WorldGrayCanvas,
           "Carto Simple": CartoDB_Positron,
           "ESRI Aerial": Esri_WorldImagery
-		};
+        };
 
         var overlayMaps = {
           "Radar": nexrad,
