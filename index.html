@@ -32,7 +32,9 @@
 
   <body>
     <div id="container_header">
-      <strong>2019 Cross Country Rankings</strong><br>
+      <strong>2019 Iowa Cross Country Rankings</strong><br>
+      Map based on data from <a HREF="https://www.iowarunjumpthrow.com/cross-country/cross-country-results-rankings/" target=_blank>IATC </a>
+      <br>
       Class: <input type="radio" name="class" value="1A" checked> 1A &nbsp;
       <!--
       <input type="radio" name="class" value="2A"> 2A &nbsp;
@@ -96,7 +98,6 @@ var json = (function () {
 
 
 
-
         /*
         var sidewalks = L.tileLayer("https://api.mapbox.com/styles/v1/prof-cjseeger/ck0ihf7664fyu1co605s4ukub/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicHJvZi1janNlZWdlciIsImEiOiJjaXQ1emQwc2QwMjI4MnBxMDRpbnozcG52In0.Ms24ScMgfKOKgLj0zuQqcw", {
         	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
@@ -151,27 +152,32 @@ var json = (function () {
 //For Each District item
         function forEachFeature_district(feature, layer) {
 
-	       //  console.log(json);
-
 
           var popupContent = "<p> <b>" + feature.properties.location +
             "</b></br>Class: " + feature.properties.class + "</p>";
 
+//console.log(feature.properties.location)
+
+/*
+var returnedData = $.grep(json, function (element, index) {
+    return element.id == 1;
+});
+
 
 
 			  var as=$(json).filter(function (i,n){
-				 // console.log(n)
-				 return n.feature.properties.location===feature.properties.location;
+
+				 console.log(json.features[i].properties)
+				 return n.properties===feature.properties.location;
 			 });
 
 			for (var i=0;i<as.length;i++)
 			  {
-			   // console.log(i+1);
+			   //console.log(i);
 			}
 
 
-
-
+*/
 
 
           layer.bindPopup(popupContent);
