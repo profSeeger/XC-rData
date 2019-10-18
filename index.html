@@ -202,8 +202,8 @@ var returnedData = $.grep(json, function (element, index) {
             var pointList = [pointA, pointB];
 
             var districtPolyline = new L.Polyline(pointList, {
-              color: getDistrictLineColor(feature.properties.rank6g, feature.properties.rank6b),
-              weight: getDistrictLineWeight(feature.properties.rank6g + feature.properties.rank6b),
+              color: getDistrictLineColor(feature.properties.rank7g, feature.properties.rank7b),
+              weight: getDistrictLineWeight(feature.properties.rank7g + feature.properties.rank7b),
               opacity: 1.0,
               smoothFactor: 1
             });
@@ -475,10 +475,20 @@ var returnedData = $.grep(json, function (element, index) {
 					opacity: 1.0, //line opacity
             	});
               }else if (weekRank == 11) {
-			  	pi3 = (22 - feature.properties['rankAvg' + gender])/22 ;
+			  	piAll = (22 - feature.properties['rankAvg' + gender])/22 ;
             	return new L.circleMarker(latlng, {
 					radius: 3, //expressed in pixels
-					fillOpacity: pi3,
+					fillOpacity: piAll,
+					fillColor: 'red',
+					color: 'black',
+					weight: 0, //outline width
+					opacity: 1.0, //line opacity
+					});
+			}else if (weekRank == 12) {
+			  	r1 = (22 - feature.properties['rankAvg' + gender])/22 ;
+	        	return new L.circleMarker(latlng, {
+					radius: 3, //expressed in pixels
+					fillOpacity: r1,
 					fillColor: 'red',
 					color: 'black',
 					weight: 0, //outline width
