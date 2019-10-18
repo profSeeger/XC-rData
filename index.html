@@ -62,9 +62,10 @@
       Rank Avg:
       <input type="radio" name="weekRank" value="10"> 3-Week &nbsp;
       <input type="radio" name="weekRank" value="11"> All &nbsp;
+       <input type="radio" name="weekRank" value="12"> Only season watch/ranked teams &nbsp;
 
       <br>
-      Show District [spider] Assignments: <input type="checkbox" id="districtAssignments">
+      Show District [spider] Assignments: <input type="checkbox" id="districtAssignments"> (Black: both, Red: girls, Blue: boys) are ranked
 
 
 
@@ -485,13 +486,13 @@ var returnedData = $.grep(json, function (element, index) {
 					opacity: 1.0, //line opacity
 					});
 			}else if (weekRank == 12) {
-			  	r1 = (22 - feature.properties['rankAvg' + gender])/22 ;
+			  	r1 = (21 - feature.properties['rankAvg' + gender])/22 ;
 	        	return new L.circleMarker(latlng, {
-					radius: 3, //expressed in pixels
+					radius: 4, //expressed in pixels
 					fillOpacity: r1,
 					fillColor: 'red',
 					color: 'black',
-					weight: 0, //outline width
+					weight: r1, //outline width
 					opacity: 1.0, //line opacity
             	});
 	          }
