@@ -1,3 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Meet Dates Visualizer</title>
+
+<style>
+html, body {
+    /*height:100%;*/
+    margin: 10px;
+    padding: 0px;
+	height: 100vh;
+}
+
+#meetCalGrid{
+	width: 490px;
+	font-size: xx-small;
+	font-family: sans-serif;
+	border-color: #000;
+	border-style: solid;
+	border-width: 0px;
+	padding: 0px;
+	border-collapse: collapse;
+}
+
+
+
+td {
+  border: 1px solid #000;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+th {
+  border-top: 0px solid #ddd;
+}
+
+
+
+</style>
+
+<script>
+
+</script>
+</head>
+
+
+
+
 <?php
 
 
@@ -122,50 +171,6 @@ $mysqli->close();
 
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Meet Dates Visualizer</title>
-
-<style>
-html, body {
-    /*height:100%;*/
-    margin:10 px;
-    padding:0;
-	height: 100vh;
-}
-
-#meetCalGrid{
-	width: 490px;
-	font-size: xx-small;
-	font-family: sans-serif;
-	border-color: #000;
-	border-style: solid;
-	border-width: 0px;
-	padding: 0px;
-	border-collapse: collapse;
-}
-
-
-
-td {
-  border: 1px solid #000;
-  text-align: center;
-  box-sizing: border-box;
-}
-
-th {
-  border-top: 0px solid #ddd;
-}
-
-
-
-</style>
-
-<script>
-
-</script>
-</head>
 
 <body>
 <table id='meetCalGrid'>
