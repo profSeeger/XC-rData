@@ -258,12 +258,12 @@ var returnedData = $.grep(json, function (element, index) {
             onEachFeature: forEachFeature_district,
             pointToLayer: function (feature, latlng) {
                 return new L.circleMarker(latlng, {
-					radius: 5, //expressed in pixels
-					fillOpacity: 0.5,
+					radius: 10, //expressed in pixels
+					fillOpacity: 0.1,
 					fillColor: 'yellow',
 					color: 'black',
-					weight: 1, //outline width
-					opacity: 0.5, //line opacity
+					weight: 0.5, //outline width
+					opacity: 1.0, //line opacity
                 });
             }
       	}).addTo(map);
@@ -441,8 +441,8 @@ var returnedData = $.grep(json, function (element, index) {
         //$('input[type=radio][name=gender]').change(function() {
         $('input[type=radio]').change(function() {
           map.removeLayer(rankedSchools);
-          map.removeLayer(districtMeets);
-          map.addLayer(districtMeets);
+         // map.removeLayer(districtMeets);
+          //map.addLayer(districtMeets);
 
           gender = $("input[name='gender']:checked").val();
           weekRank = $("input[name='weekRank']:checked").val();
@@ -468,7 +468,7 @@ var returnedData = $.grep(json, function (element, index) {
               }else if (weekRank == 10) {
 			  	pi3 = (22 - feature.properties['rankLast3' + gender])/22 ;
             	return new L.circleMarker(latlng, {
-					radius: 3, //expressed in pixels
+					radius: 4, //expressed in pixels
 					fillOpacity: pi3,
 					fillColor: 'red',
 					color: 'black',
@@ -478,7 +478,7 @@ var returnedData = $.grep(json, function (element, index) {
               }else if (weekRank == 11) {
 			  	piAll = (22 - feature.properties['rankAvg' + gender])/22 ;
             	return new L.circleMarker(latlng, {
-					radius: 3, //expressed in pixels
+					radius: 4, //expressed in pixels
 					fillOpacity: piAll,
 					fillColor: 'red',
 					color: 'black',
