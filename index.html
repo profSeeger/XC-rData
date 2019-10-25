@@ -461,10 +461,22 @@ var returnedData = $.grep(json, function (element, index) {
             filter: schoolFilter,
             onEachFeature: forEachFeature_rank,
             pointToLayer: function(feature, latlng) {
-	          if (weekRank < 10) {
+	          if (weekRank < 9) {
               	return L.marker(latlng, {
                	 icon: getIcon(feature.properties['rank' + weekRank + gender]),
               	});
+
+              }else if (weekRank == 9) {
+			  	if (feature.properties['sqm' + gender] < 16) {radius = 6}else{radius=0}
+			  	if (feature.properties['sqm' + gender] < 16) {weight = 1}else{weight=0}
+            	return new L.circleMarker(latlng, {
+					radius: radius, //expressed in pixels
+					fillOpacity: 1.0,
+					fillColor: 'red',
+					color: 'black',
+					weight: weight, //outline width
+					opacity: 1.0, //line opacity
+            });
               }else if (weekRank == 10) {
 			  	pi3 = (22 - feature.properties['rankLast3' + gender])/21 ;
 			  	if (feature.properties['rankLast3' + gender] < 17) {weight = 1}else{weight=0}
