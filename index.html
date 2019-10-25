@@ -465,8 +465,8 @@ var returnedData = $.grep(json, function (element, index) {
               	});
 
               }else if (weekRank == 9) {
-			  	if (feature.properties['sqm' + gender] < 16) {radius = 6}else{radius=0}
-			  	if (feature.properties['sqm	' + gender] < 16) {weight = 1}else{weight=0}
+			  	if (feature.properties['sqm' + gender] == 1) {radius = 6}else{radius=0}
+			  	if (feature.properties['sqm	' + gender] == 1) {weight = 1}else{weight=0}
             	return new L.circleMarker(latlng, {
 					radius: radius, //expressed in pixels
 					fillOpacity: 1.0,
@@ -522,7 +522,6 @@ var returnedData = $.grep(json, function (element, index) {
           } else {
             map.removeLayer(districtPolylines)
           }
-
 
 
         })
