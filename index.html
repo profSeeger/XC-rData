@@ -65,7 +65,8 @@
        <input type="radio" name="weekRank" value="12"> All weeks watch/ranked teams only (darker red = higher ranked) &nbsp;
 
       <br>
-      Show District [spider] Assignments: <input type="checkbox" id="districtAssignments"> (Black: both, Red: girls, Blue: boys) are ranked
+      Show District [spider] Assignments: <input type="checkbox" id="districtAssignments"> (Black: both, Red: girls, Blue: boys) are ranked<br>
+      Show State Qualifiers
 
 
 
@@ -466,14 +467,14 @@ var returnedData = $.grep(json, function (element, index) {
 
               }else if (weekRank == 9) {
 			  	if (feature.properties['sqm' + gender] == 1) {radius = 5}else{radius=0}
-			  	if (feature.properties['sqm	' + gender] == 1) {weight = 1}else{weight=0}
-			  	if (feature.properties['rank8' + gender] < 16) {color = 'green';}else{color='orange'}
+			  	if (feature.properties['sqm' + gender] == 1) {weight = 1 }else{weight=0}
+			  	if (feature.properties['rank8' + gender] < 16) {color = 'orange';}else{color='white'}
 
             	return new L.circleMarker(latlng, {
 					radius: radius, //expressed in pixels
 					fillOpacity: 1.0,
-					fillColor: 'green',
-					color: color,
+					fillColor: color,
+					color: 'black',
 					weight: weight, //outline width
 					opacity: 1.0, //line opacity
             });
