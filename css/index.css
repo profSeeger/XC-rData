@@ -32,7 +32,7 @@ html,
       #container_header {
         position: absolute;
         top: 0px;
-        height: 180px;
+        height: 250px;
         width: 100%;
         background-color: white;
         margin: 10px;
@@ -40,7 +40,7 @@ html,
 
       #container_main {
         position: absolute;
-        top: 160px;
+        top: 250px;
         /* Header Height */
         bottom: 10px;
         /* Footer Height */

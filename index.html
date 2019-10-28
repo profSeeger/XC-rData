@@ -33,7 +33,7 @@
   <body>
     <div id="container_header">
       <strong>2019 Iowa Cross Country Rankings</strong><br>
-      <em>Map based on data from <a HREF="https://www.iowarunjumpthrow.com/cross-country/cross-country-results-rankings/" target=_blank>IATC</a> updated 10/22/19</em>
+      <em>Map based on data from <a HREF="https://www.iowarunjumpthrow.com/cross-country/cross-country-results-rankings/" target=_blank>IATC</a> updated 10/28/19</em>
       <br>
       <br>Class: <input type="radio" name="class" value="1A" checked> 1A &nbsp;
       <!--
@@ -64,9 +64,10 @@
       <input type="radio" name="weekRank" value="11"> All weeks &nbsp;
        <input type="radio" name="weekRank" value="12"> All weeks watch/ranked teams only (darker red = higher ranked) &nbsp;
 
-      <br>
-      Show District [spider] Assignments: <input type="checkbox" id="districtAssignments"> (Black: both, Red: girls, Blue: boys) are ranked<br>
-      Show State Qualifiers
+      <br><br>
+      Spider Maps<br>
+      <input type="checkbox" id="districtAssignments"> District Assignments (Red: girls, Blue: boys, Black: both are ranked)<br>
+      <input type="checkbox" id="stateQualifiers"> Show State Qualifiers
 
 
 
@@ -115,6 +116,7 @@ var json = (function () {
         });
 
         var districtPolylines = L.layerGroup();
+        var statePolylines = L.layerGroup();
 
 
 
@@ -126,7 +128,8 @@ var json = (function () {
             d == "Mount Ayr" ? '40.705, -94.226' :
             d == "Iowa City (Regina)" ? '41.668, -91.504' :
             d == "Ridge View" ? '42.48, -95.537' :
-            '47, -98.0';
+            f == "State Meet" ? '42.5848, -94.1877' :
+               '47, -98.0';
         }
         function getDistrictLineColor(g, b) {
           //console.log(g+", "+b);
