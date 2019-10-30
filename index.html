@@ -56,8 +56,9 @@
       <input type="radio" name="weekRank" value="5"> 5 &nbsp;
       <input type="radio" name="weekRank" value="6"> 6 &nbsp;
       <input type="radio" name="weekRank" value="7"> 7 &nbsp;
-      <input type="radio" name="weekRank" value="8" checked> 8 &nbsp;
-      <input type="radio" name="weekRank" value="9"> State Qualifiers
+      <input type="radio" name="weekRank" value="8"> 8 &nbsp;
+      <input type="radio" name="weekRank" value="9" checked> 9 (State Qualifiers)
+
       <br>
       Rank Avg:
       <input type="radio" name="weekRank" value="10"> 3-Week &nbsp;
@@ -463,12 +464,12 @@ var returnedData = $.grep(json, function (element, index) {
             filter: schoolFilter,
             onEachFeature: forEachFeature_rank,
             pointToLayer: function(feature, latlng) {
-	          if (weekRank < 9) {
+	          if (weekRank < 10) {
               	return L.marker(latlng, {
                	 icon: getIcon(feature.properties['rank' + weekRank + gender]),
               	});
 
-              }else if (weekRank == 9) {
+              }else if (weekRank == 999) {
 			  	if (feature.properties['sqm' + gender] == 1) {radius = 5}else{radius=0}
 			  	if (feature.properties['sqm' + gender] == 1) {weight = 1 }else{weight=0}
 			  	if (feature.properties['rank8' + gender] < 16) {color = 'orange';}else{color='white'}
