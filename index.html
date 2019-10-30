@@ -218,7 +218,7 @@ var returnedData = $.grep(json, function (element, index) {
 
     //create table of rankings to date for school popup
           //replace all non ranked with a dash -
-          for (i = 0; i < 9; i++) {
+          for (i = 0; i <= 9; i++) {
             if (feature.properties["rank" + i + "g"] == '21' || feature.properties["rank" + i + "g"] == '') {
               feature.properties["rank" + i + "g"] = "-";
             }
@@ -244,8 +244,10 @@ var returnedData = $.grep(json, function (element, index) {
             "<tr><td>6: </td><td>" + feature.properties.rank6g + "</td><td>" + feature.properties.rank6b + "</td></tr>" +
             "<tr><td>7: </td><td>" + feature.properties.rank7g + "</td><td>" + feature.properties.rank7b + "</td></tr>" +
             "<tr><td>8: </td><td>" + feature.properties.rank8g + "</td><td>" + feature.properties.rank8b + "</td></tr>" +
-            "<tr><td>Avg-3: </td><td>" + feature.properties.rankLast3g + "</td><td>" + feature.properties.rankLast3b + "</td></tr>" +
-             "<tr><td>Avg: </td><td>" + feature.properties.rankAvgg + "</td><td>" + feature.properties.rankAvgb + "</td></tr>" +
+             "<tr><td>9: </td><td>" + feature.properties.rank9g + "</td><td>" + feature.properties.rank9b + "</td></tr>" +
+            "<tr><td>*Last 3 week avg.: </td><td>" + feature.properties.rankLast3g + "</td><td>" + feature.properties.rankLast3b + "</td></tr>" +
+             "<tr><td>Weeks 1-8 avg: </td><td>" + feature.properties.rankAvgg + "</td><td>" + feature.properties.rankAvgb + "</td></tr>" +
+             "<tr><td colSpan='3'><em>*average regular season only</em></td></tr>" +
             "</table>";
           layer.bindPopup(popupContent);
         }
@@ -670,7 +672,7 @@ var returnedData = $.grep(json, function (element, index) {
 
 
 
-        //map.fitBounds(rankedSchools .getBounds(), {padding: [2, 2]});
+       // map.fitBounds(districtMeets .getBounds(), {padding: [2, 2]});
 
 
       }); //End jQuery On Document load
