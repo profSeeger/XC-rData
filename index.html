@@ -60,10 +60,10 @@
       <input type="radio" name="weekRank" value="9" checked> 9 (State Qualifiers)
 
       <br>
-      Rank Avg:
-      <input type="radio" name="weekRank" value="10"> 3-Week &nbsp;
-      <input type="radio" name="weekRank" value="11"> All weeks &nbsp;
-       <input type="radio" name="weekRank" value="12"> All weeks watch/ranked teams only (darker red = higher ranked) &nbsp;
+      Rank Averages: (darker red = higher ranked) &nbsp;
+      <input type="radio" name="weekRank" value="11"> Last 3-Week &nbsp;
+      <input type="radio" name="weekRank" value="12"> All weeks &nbsp;
+      <input type="radio" name="weekRank" value="13"> All weeks watch/ranked teams only
 
       <br><br>
       Spider Maps<br>
@@ -484,7 +484,7 @@ var returnedData = $.grep(json, function (element, index) {
 					weight: weight, //outline width
 					opacity: 1.0, //line opacity
             });
-              }else if (weekRank == 10) {
+              }else if (weekRank == 11) {
 			  	pi3 = (22 - feature.properties['rankLast3' + gender])/21 ;
 			  	if (feature.properties['rankLast3' + gender] < 17) {weight = 1}else{weight=0}
             	return new L.circleMarker(latlng, {
@@ -495,7 +495,7 @@ var returnedData = $.grep(json, function (element, index) {
 					weight: weight, //outline width
 					opacity: 1.0, //line opacity
             	});
-              }else if (weekRank == 11) {
+              }else if (weekRank == 12) {
 			  	piAll = (22 - feature.properties['rankAvg' + gender])/21 ;
 			  	if (feature.properties['rankLast3' + gender] < 17) {weight = 1}else{weight=0}
             	return new L.circleMarker(latlng, {
@@ -506,7 +506,7 @@ var returnedData = $.grep(json, function (element, index) {
 					weight: weight, //outline width
 					opacity: 1.0, //line opacity
 					});
-			}else if (weekRank == 12) {
+			}else if (weekRank == 13) {
 			  	r1 = (21 - feature.properties['rankAvg' + gender])/21 ;
 	        	return new L.circleMarker(latlng, {
 					radius: 4, //expressed in pixels
