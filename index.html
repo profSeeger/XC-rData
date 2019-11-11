@@ -467,7 +467,7 @@ var returnedData = $.grep(json, function (element, index) {
             filter: schoolFilter,
             onEachFeature: forEachFeature_rank,
             pointToLayer: function(feature, latlng) {
-	          if (weekRank < 10) {
+	          if (weekRank <= 10) {
               	return L.marker(latlng, {
                	 icon: getIcon(feature.properties['rank' + weekRank + gender]),
               	});
