@@ -547,7 +547,7 @@ var returnedData = $.grep(json, function (element, index) {
 
         //This draws a default teardrop for each school
 
-        var rankedSchoolsTeardrop = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+        var rankedSchoolsTeardrop = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings20.geojson", {
           onEachFeature: forEachFeature_district,
           // pointToLayer: function (feature, latlng) {
           //     return L.circleMarker(latlng, districtMarkerOptions);
@@ -573,7 +573,7 @@ var returnedData = $.grep(json, function (element, index) {
           if (feature.properties.rankAvgb < 21) return true
         }
 
-        var rankedSchoolsWeighted = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings.geojson", {
+        var rankedSchoolsWeighted = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings20.geojson", {
           filter: weightedRankFilter,
           onEachFeature: forEachFeature_rank,
           pointToLayer: function(feature, latlng) {
