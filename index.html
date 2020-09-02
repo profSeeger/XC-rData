@@ -270,7 +270,8 @@ var returnedData = $.grep(json, function (element, index) {
 					opacity: 1.0, //line opacity
                 });
             }
-      	}).addTo(map);
+      	})
+        //.addTo(map);
 
 
 	//Alternatively, a Div marker could be used for the district site.
@@ -659,7 +660,7 @@ var returnedData = $.grep(json, function (element, index) {
 
         var overlayMaps = {
           "Radar": nexrad,
-          "District Sites": districtMeets,
+         // "District Sites": districtMeets,
           "Schools": rankedSchools,
          // "Schools blue": rankedSchoolsTeardrop,
          // "Weighted Week Avg": rankedSchoolsWeighted
