@@ -452,7 +452,8 @@ var returnedData = $.grep(json, function (element, index) {
           weekRank = $("input[name='weekRank']:checked").val();
 
           var schoolFilter = function(feature) {
-            if (feature.properties.rankAvgb > 0) return true
+            //if (feature.properties.rankAvgb > 0) return true;
+              return true
           }
 
 
