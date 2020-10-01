@@ -123,20 +123,8 @@ var json = (function () {
 
 
 
-/* 2019 District Sites
-	d == "Cedar Falls" ? '42.53, -92.487' :
-            d == "Marshalltown" ? '42.001, -92.905' :
-            d == "Mount Ayr" ? '40.705, -94.226' :
-            d == "Iowa City (Regina)" ? '41.668, -91.504' :
-            d == "Ridge View" ? '42.48, -95.537' :
-            f == "State Meet" ? '42.5848, -94.1877' :
-            */
-
-
-
-//Spiderline Style info
-        function getDistrictCoords(d) {
-          return d == "ACGC" ? '41.67055, -94.494' :
+/* 2020 District Sites
+             d == "ACGC" ? '41.67055, -94.494' :
 		//	d == "Audubon" ? '41.7180421, -94.9324868' :
 		//	d == "Cascade (Western Dubuque)" ? '42.3008, -91.018142' :
 		//	d == "Central Springs (Cedar Falls)" ? '43.2907924, -93.2032593' :
@@ -144,6 +132,17 @@ var json = (function () {
          //   d == "Clayton Ridge (Guttenberg)" ? '42.7899897, -91.1029068' :
          //   d == "Pekin" ? '41.1327937, -92.0826771' :
           //  d == "Ridge View" ? '42.48, -95.537' :
+            */
+
+
+
+//Spiderline Style info
+        function getDistrictCoords(d) {
+          return d == "Cedar Falls" ? '42.53, -92.487' :
+            d == "Marshalltown" ? '42.001, -92.905' :
+            d == "Mount Ayr" ? '40.705, -94.226' :
+            d == "Iowa City (Regina)" ? '41.668, -91.504' :
+            d == "Ridge View" ? '42.48, -95.537' :
             f == "State Meet" ? '42.5848, -94.1877' :
                '47, -98.0';
         }
