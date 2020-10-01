@@ -276,7 +276,7 @@ var returnedData = $.grep(json, function (element, index) {
             onEachFeature: forEachFeature_district,
             pointToLayer: function (feature, latlng) {
                 return new L.circleMarker(latlng, {
-					radius: 10, //expressed in pixels
+					radius: 6, //expressed in pixels
 					fillOpacity: 0.2,
 					fillColor: 'yellow',
 					color: 'black',
@@ -285,7 +285,7 @@ var returnedData = $.grep(json, function (element, index) {
                 });
             }
       	})
-        .addTo(map);
+        //.addTo(map);
 
 
 	//Alternatively, a Div marker could be used for the district site.
@@ -674,7 +674,7 @@ var returnedData = $.grep(json, function (element, index) {
 
         var overlayMaps = {
           "Radar": nexrad,
-         // "District Sites": districtMeets,
+         "District Sites": districtMeets,
           "Schools": rankedSchools,
          // "Schools blue": rankedSchoolsTeardrop,
          // "Weighted Week Avg": rankedSchoolsWeighted
