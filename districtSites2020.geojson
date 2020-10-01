@@ -1,0 +1,117 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "class": "1A",
+        "location": "ACGC"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.494,
+          41.67055
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": "1A",
+        "location": "Audubon"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.9324868,
+          41.7180421
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": "1A",
+        "location": "Cascade (Western Dubuque)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.018142,
+          42.3008
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": "1A",
+        "location": "Central Springs (Cedar Falls)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -93.2032593,
+          43.2907924
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": "1A",
+        "location": "Mount Ayr"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -94.226,
+          40.705
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": "1A",
+        "location": "Clayton Ridge (Guttenberg)"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -91.1029068,
+          42.7899897
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": "1A",
+        "location": "Pekin"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -92.0826771,
+          41.1327937
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "class": "1A",
+        "location": "Ridge View"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -95.537,
+          42.48
+        ]
+      }
+    }
+  ]
+}
