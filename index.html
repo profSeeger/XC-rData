@@ -271,7 +271,7 @@ var returnedData = $.grep(json, function (element, index) {
 
 
 
-        var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
+        var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2020.geojson", {
             onEachFeature: forEachFeature_district,
             pointToLayer: function (feature, latlng) {
                 return new L.circleMarker(latlng, {
