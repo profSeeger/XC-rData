@@ -297,7 +297,7 @@ var returnedData = $.grep(json, function (element, index) {
 		      html: "<i class='far fa-running'></i>"
 		    });
 
-		    var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2019.geojson", {
+		    var districtMeets = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/districtSites2020.geojson", {
 		      onEachFeature: forEachFeature_district,
 		      pointToLayer: function(feature, latlng) {
 		        return L.marker(latlng, {
@@ -673,7 +673,7 @@ var returnedData = $.grep(json, function (element, index) {
 
         var overlayMaps = {
           "Radar": nexrad,
-        // "District Sites": districtMeets,
+         "District Sites": districtMeets,
           "Schools": rankedSchools,
          // "Schools blue": rankedSchoolsTeardrop,
          // "Weighted Week Avg": rankedSchoolsWeighted
