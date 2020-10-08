@@ -474,7 +474,7 @@ var returnedData = $.grep(json, function (element, index) {
 
 
 
-          rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings20.geojson", {
+          rankedSchools = new L.GeoJSON.AJAX("https://profseeger.github.io/XC-rData/schoolRankings20.geojson/?", {
             filter: schoolFilter,
             onEachFeature: forEachFeature_rank,
             pointToLayer: function(feature, latlng) {
