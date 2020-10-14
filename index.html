@@ -33,7 +33,7 @@
   <body>
     <div id="container_header">
       <strong>2020 Iowa Cross Country Rankings</strong><br>
-      <em>Map based on data from <a HREF="https://www.iowarunjumpthrow.com/cross-country/2020-cross-country-results-rankings/2020-team-rankings/" target=_blank>IATC</a> updated 10/8/2020</em>
+      <em>Map based on data from <a HREF="https://www.iowarunjumpthrow.com/cross-country/2020-cross-country-results-rankings/2020-team-rankings/" target=_blank>IATC</a> updated 10/14/2020</em>
       <br>
       <br>Class: <input type="radio" name="class" value="1A" checked> 1A &nbsp;
       <!--
@@ -129,11 +129,9 @@ var json = (function () {
 		//	d == "Central Springs (Cedar Falls)" ? '43.2907924, -93.2032593' :
          //   d == "Mount Ayr" ? '40.705, -94.226' :
          //   d == "Clayton Ridge (Guttenberg)" ? '42.7899897, -91.1029068' :
-         //   d == "Pekin" ? '41.1327937, -92.0826771' :
+         //   d == "Pekin (Wildwood Park, Ottumwa)" ? '41.000144, -92.449951' :
           //  d == "Ridge View" ? '42.48, -95.537' :
             */
-
-
 
 //Spiderline Style info
         function getDistrictCoords(d) {
@@ -142,6 +140,7 @@ var json = (function () {
             d == "Mount Ayr" ? '40.705, -94.226' :
             d == "Iowa City (Regina)" ? '41.668, -91.504' :
             d == "Ridge View" ? '42.48, -95.537' :
+            d == "Pekin (Wildwood Park, Ottumwa)" ? '41.000144, -92.449951' :
             f == "State Meet" ? '42.5848, -94.1877' :
                '47, -98.0';
         }
