@@ -218,6 +218,7 @@ var returnedData = $.grep(json, function (element, index) {
             var districtPolyline = new L.Polyline(pointList, {
               color: getDistrictLineColor(feature.properties.rank7g, feature.properties.rank7b),
               weight: getDistrictLineWeight(feature.properties.rank7g + feature.properties.rank7b),
+              title: "fff",
               opacity: 1.0,
               smoothFactor: 1
             });
