@@ -227,7 +227,8 @@ var returnedData = $.grep(json, function (element, index) {
               color: getDistrictLineColor(feature.properties.rank7g, feature.properties.rank7b),
               weight: getDistrictLineWeight(feature.properties.rank7g + feature.properties.rank7b),
               opacity: 1.0,
-              smoothFactor: 1
+              smoothFactor: 1,
+			  title: "abcd"
             });
             districtPolyline.addTo(districtPolylines); //add to layer group
 
