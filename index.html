@@ -70,7 +70,7 @@
 
       <br><br>
       Spider Maps<br>
-      <input type="checkbox" id="districtAssignments"> District Assignments (Red: girls, Blue: boys, Black: both are ranked)<br>
+      <input type="checkbox" id="districtAssignments"> District Assignments (Red: girls, Blue: boys, Black Bold: both are ranked)<br>
       <input type="checkbox" id="stateQualifiers"> Show State Qualifiers
 
 
@@ -145,7 +145,7 @@ var json = (function () {
         function getDistrictLineColor(g, b) {
           //console.log(g+", "+b);
           if (parseFloat(g) < 16 && parseFloat(b) < 16) {
-            return 'black';
+            return 'purple';
           } else if (parseFloat(g) < 16) {
             return 'red';
           } else if (parseFloat(b) < 16) {
