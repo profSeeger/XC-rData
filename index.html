@@ -219,7 +219,7 @@ var returnedData = $.grep(json, function (element, index) {
               opacity: 1.0,
               smoothFactor: 1
             });
-            districtPolyline.bindTooltip("test").addTo(districtPolylines); //add to layer group
+            districtPolyline.bindTooltip(feature.properties.teamName).addTo(districtPolylines); //add to layer group
 
 //bindPopup('Route 1').
 
