@@ -156,6 +156,15 @@
         padding-top: 2px;
       }
 
+            .rank16-div-icon {
+	    font-size: xx-small;
+        background-color: red;
+        text-align: center;
+        border: 2px solid black;
+        border-radius: 50%;
+        padding-top: 2px;
+      }
+
       .rankW-div-icon {
 	    font-size: xx-small;
         text-align: center;
@@ -166,7 +175,7 @@
       }
 
 	  .rankN-div-icon {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.7);
         border-radius: 15%;
       }
 
